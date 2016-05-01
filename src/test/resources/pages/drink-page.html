@@ -1,0 +1,1075 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+
+</head>
+<body>
+<div id="mg-site">
+    <div id="alert-body"></div>
+    <div id="fb-root"></div>
+    <script type="text/javascript">
+        init_fb();
+    </script>
+    <div id="template_url" class="dn">http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden</div>
+
+    <!-- Varukorg popup Start -->
+    <div id="varukorg-popup" class="popup-alert-wrapper">
+        <div class="popup-alert-box">
+            <div class="popup-alert-header popup-alert-green"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-cart.png" alt="" height="50"></div>
+            <div class="popup-alert-content">
+                <h3>Varan har lagts i din varukorg!</h3>
+                <div class="popup-alert-message"><a class="button-smallrounded-tiny" id="close-varukorg-popup">Fortsätt handla</a> <a class="button-smallrounded-tiny" style="margin-left: 20px;" href="http://www.vinguiden.com/cocktailguiden/varukorg/">Visa varukorg</a></div>
+            </div>
+        </div>
+    </div>
+    <!-- Varukorg popup End -->
+
+    <div id="popup-age-control" class="popup-age-control-wrapper">
+        <div class="popup-age-control-box">
+            <div class="popup-age-control-inner">
+
+                <div class="popup-title"><h2>Välkommen</h2></div>
+
+                <p>Våra webbplatser innehåller information om alkoholhaltiga drycker och riktar sig till dig som fyllt 25 år!</p>
+
+                <p>Genom att fortsätta in på sidan godkänner du att vi använder oss utav cookies, du kan läsa mer om cookies här.</p>
+
+                <div style="margin: 35px 0px;text-align: center;">
+
+                    <div class="button-red set-age-cookie">Fortsätt</div>
+
+                </div>
+
+
+                <div style="text-align: center;">
+                    <img src="https://www.vinguiden.com/wp-content/themes/vinguiden/images/vinguiden.png" alt="" border="0" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $(".set-age-cookie").click(function() {
+                Cookies.set('SFagecookiecheck', '1', { expires: 7 });
+                $("#popup-age-control").fadeOut(500);
+            });
+        });
+    </script>		<div id="header-login-box-wrapper">
+    <div id="header-login-box">
+        <div id="header-login-inner">
+
+            <div id="header-login-button-close">X</div>
+            <div class="header-login-box-title"><h2>Logga in</h2></div>
+
+
+            <form name="loginform" id="loginform" action="http://www.vinguiden.com/cocktailguiden/wp-login.php" method="post">
+
+                <ul class="header-login-ul">
+                    <li class="input-label">Användarnamn:</li>
+                    <li><input type="text" id="user_login" name="log" class="input-light-grey" value="" /></li>
+                    <li class="input-label">Lösenord:</li>
+                    <li><input type="password" id="user_pass" name="pwd" class="input-light-grey" /></li>
+                    <li>
+                        <input type="hidden" name="redirect_to" value="https://www.vinguiden.com/cocktailguiden/drinkar/amaretto-sour-2/" />
+                        <input type="submit" name="wp-submit" id="wp-submit" class="button-red" value="Logga in" />
+                    </li>
+                    <li><a href="javascript:login();"><div class="button-fb-blue"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-facebook-white.png" border="0" class="login-option-icon">Logga in med fb</div></a></li>
+                    <li><a href="https://www.vinguiden.com/cocktailguiden/glomt-losenordet/">Har du glömt ditt lösenord?</a></li>
+                </ul>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
+    <div id="header-register-box-wrapper">
+        <div id="header-register-box">
+            <div id="header-register-inner">
+
+                <div class="header-register-title"><h2>Bli medlem på Cocktailguiden.com</h2></div>
+                <div id="header-register-button-close">X</div>
+
+                <form method="post" action="https://www.vinguiden.com/cocktailguiden/bli-medlem/">
+
+                    <ul class="header-register-ul">
+                        <li>
+                            <ul>
+                                <li class="input-label">Användarnamn*</li>
+                                <li><input type="text" class="obfield input-light-grey" name="f0" value=""></li>
+
+                                <li class="input-label">E-postadress*</li>
+                                <li><input type="text" class="obfield input-light-grey" name="f1" value=""></li>
+
+                                <li class="input-label">Förnamn*</li>
+                                <li><input type="text" class="obfield input-light-grey" name="f2" value=""></li>
+
+                                <li class="input-label">Efternamn*</li>
+                                <li><input type="text" class="obfield input-light-grey" name="f3" value=""></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li class="input-label">Lösenord*</li>
+                                <li><input type="password" class="obfield input-light-grey pwfield1" name="f6"></li>
+
+                                <li class="input-label">Bekräfta lösenord*</li>
+                                <li><input type="password" class="obfield input-light-grey pwfield2" name="f7"></li>
+
+                                <li class="input-label">Födelseår* (ÅÅÅÅ)</li>
+                                <li><input type="text" class="obfield input-light-grey" name="f5" value=""></li>
+
+                                <li class="input-label">Mobilnummer*</li>
+                                <li><input type="text" class="obfield input-light-grey" name="f4" value=""></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <div class="clear"></div>
+
+                    <p><input type="checkbox" name="agree" /> <span id="header-register-terms-button" class="cp">Jag godkänner villkoren för att bli medlem på Cocktailguiden.com</span></p>
+
+                    <input type="submit" class="button-red" value="Registrera" />
+
+                </form>
+
+            </div>
+        </div>
+
+        <div id="header-register-terms">
+
+            <div id="header-terms-button-close">X</div>
+            <div id="header-terms-inner">
+                <h1>Allmänna villkor för Vin &amp; Cocktailguiden i Sverige AB´s webbplatser</h1>
+                <p>Följande villkor gäller för tillgång till och användande av denna webbplats. Ditt användande av webbplatsen innebär att Du godkänner och accepterar dessa villkor utan undantag. Vinguiden.com är ett varumärke som representerar denna webbplats.</p>
+                <h3>Syfte</h3>
+                <p>Tillhandahålla marknaden med kvalitativ information inom ett visst produktsegment, främst vin.</p>
+                <h3>Vår tjänst</h3>
+                <p>Vinguiden.com är en oberoende informationskanal för alkoholhaltiga drycker där man upplyser besökaren om produkter från Systembolagets beställningssortiment, däribland utvalda tips. Webbplatsen fungerar även som ett verktyg för att enklare beställa produkter från Systembolagets beställningssortiment.</p>
+                <h3>Information enligt Personuppgiftslagen (PuL)</h3>
+                <div>De uppgifter om dig du lämnar kommer behandlas enligt personuppgiftslagen (1998:204) och syftet är endast att behandla din beställning. Personuppgiftsansvarig är Vin- &amp; Cocktailguiden i Sverige Aktiebolag, org. nr. 556568-4759. Du har rätt att begära ett besked om vilka personuppgifter som vi behandlar om dig samt att begära rättelse av sådana uppgifter som inte längre stämmer. Ansökan om detta sker genom att skicka en undertecknad begäran till Norrtullsgatan 57, 0tr, 113 45 Stockholm.</div>
+                <div></div>
+                <p>Personuppgifterna som du registrerar på Vinguiden.com kommer att hanteras av Vinguiden.com. Det främsta syftet med att hantera personuppgifterna är att vi ska kunna uppfylla våra åtaganden mot dig som medlem.</p>
+                <p>Exempelvis, personuppgifter krävs för att kunna upprätthålla en enkel korrespondens.</p>
+                <p>De personuppgifter som kan komma att behandlas är främst sådana som du aktivt angett genom att nyttja våra tjänster och erbjudanden, till exempel genom att registrera dig som medlem eller genom attt använda någon annan av de tjänster som Vinguiden.com erbjuder .</p>
+                <p>Genom att godkänna våra allmänna villkor samtycker du till vår behandling av dina personuppgifter som den beskrivits ovan.</p>
+                <h3>Cookies</h3>
+                <p>En cookie är en liten informationsfil som sparas i besökarens webbläsare. Cookie filen innehåller mestadels anonym information, men om du loggar in på sidan så lagrar vi epost, namn &amp; länk till din personliga profilbild i cookies. Vinguiden.com´s webbplats använder cookies för att tillhandahålla tjänster efter besökarens förfrågningar till våra servrar. Informationen som sparas i relation till cookie-filen används för inloggningskontroll av medlemmar, lokal annonsbegränsning (s.k. capping), mäta antalet sidvisningar och besökare samt underlätta användningen av vissa formulär. Om du inte accepterar användandet av cookies på denna webbplats kan du fritt välja att stänga av dessa via din webbläsares (Internet Explorer, Opera, Mozilla m.fl.) säkerhetsinställningar. Det innebär dock att viss funktionalitet på webbplatsen begränsas, t.ex. fungerar inte &#8221;automatinloggning&#8221; utan cookies.</p>
+                <p>Tredjepartsleverantörer, inklusive Webtraffic, visar annonser på webbplatser. Tredjepartsleverantörer, inklusive Webtraffic använder cookies för att visa annonser utifrån ditt besök på den här och andra webbplatser. Du kan välja bort Webtraffics cookies genom att besöka sidan ta bort annonscookies på http://www.webtraffic.se/optout</p>
+                <p>&nbsp;</p>
+                <h3>Sessionsfiler</h3>
+                <p>Sessionsfiler sparas däremot i webbservern och används framförallt av webbserverns programvara för att personifiera webbsidornas innehåll. Det kan t.ex. vara för att tala om att ni är inloggad, hur många besökare det är just nu, vilket datum och klockslag det är eller personliga meddelanden. Denna server sparar sessionsfilerna under en begränsad tid vilket är maximalt 60 minuter efter senaste besöket. Sessionsfilerna är också en kritisk del för att tjänsten ska fungera, t.ex. används dessa för att inte servern ska kunna överbelastas av en enskild användare.</p>
+                <h3>Kopieringsskydd</h3>
+                <p>Materialet (program, design, texter och bilder) på denna webbplats är skyddat enligt lagen om upphovsrätt. Du får inte modifiera, omforma, kopiera, visa, vidareförmedla, distribuera, publicera, licensiera, skapa arbeten som härrör från, överföra eller sälja någon information, produkt eller tjänst som erhållits genom denna webbplats. Material får kopieras endast för privat bruk och då med tydlig källanvisning till Vinguiden.com. För annat än privat bruk måste ett skriftligt medgivande erhållas från Vinguiden.com, annars är eftertryck eller annan kopiering förbjuden. Vi tillhandahåller materialet på denna plats gratis i strikt privat syfte för alla som är intresserade av ämnet. Materialet får ej användas i konkurerrande syfte.</p>
+                <h3>Länkning</h3>
+                <p>Vi ser gärna att andra gör en länk till vår webbplats så länge det inte stör Vinguiden.com´s verksamhetssyfte och har ett strikt icke-kommersiellt syfte. Andra företag, organisationer eller privatpersoner får inte utnyttja Vinguiden.com´s varumärke eller webbplats utan godkännande, detta gäller även djuplänkning till och från denna webbplats om inte annat avtalats. I de tjänster vi erbjuder där det går att publicera egen information, kontakta medlemmar, annonsörer eller andra besökare får man inte uppge externa länkar i konkurerande syfte, t.ex. att använda våra publika platser för att värva medlemmar till annan webbplats.</p>
+                <h3>Kontakt, research eller marknadsföring</h3>
+                <p>Företag, organisationer eller privatpersoner får inte utnyttja Vinguiden.com´s webbplats för att få kontakt i syfte att marknadsföra tjänster och produkter till andra besökare, kunder eller medlemmar på webbplatsen. Undersökningar, research, informationsinsamling eller journalister som söker personer betraktas som marknadsföring och är inte heller tillåtet. Detta inkluderar alla tjänster som Vinguiden.com erbjuder.</p>
+                <h3>Garantier</h3>
+                <p>Vinguiden.com lämnar inga garantier eller utfästelser för denna webbplats eller information, produkter och annat innehåll (inklusive tredje parts information, produkter, innehåll och tjänster) som finns eller erhållits genom denna webbplats.</p>
+                <h3>Ansvarsbegränsning</h3>
+                <p>Varken Vinguiden.com eller någon annan part som bidrar med information på webbplatsen kan i något fall hållas ansvarig för skador som orsakats annan.</p>
+                <h1></h1>
+                <h3>Beställning via Vinguiden.com</h3>
+                <p>Observera att Vinguiden.com ej är en samarbetspartner med Systembolaget. Webbplatsen nyttjar och presenterar endast produkter från det öppna API som Systembolaget tillhandahåller.</p>
+                <h3>Förfarande</h3>
+                <p>1. När du vald de produkter du vill beställa via Vinguiden.com´s webbplats eller separata beställningssidor, ombeds du att gå vidare.</p>
+                <p>2. Om det är första gången du beställer kräver Systembolaget en registrering på deras webbplats (Observera att registreringen gör du bara en gång).</p>
+                <p>3. Fortsätt din order på Vinguiden.com genom att följa anvisningarna tills beställningen är skickad.</p>
+                <p>4. Din orderinformation vidarebefordras till Systembolagets webbplats.</p>
+                <p>5. Observera att du som beställare är ansvarig för det personliga användarkontot och de beställningar du skickar. Systembolagets användarvillkor för webbplatsen och beställningsvillkor hittar du här. <a href="http://www.systembolaget.se/Allmanna-villkor/" target="_blank">Läs mer här &gt;&gt;</a></p>
+                <p>6. All vidare hantering sköts av Systembolaget. Systembolaget ser till att din beställning skickas till vald Systembolagsbutik.</p>
+                <p>7. Så snart dina varor <em>(inom ca 5-8 dagar)</em> kommer till butiken brukar personalen kontakta dig via telefon eller SMS. Om du inte blir kontaktad inom en vecka så ring ditt Systembolag, telefonnumret hittar du i bekräftelsemejlet.</p>
+                <p>8. Produkten finns i lager när din beställning fullföljs. I och med ledtiderna kan lagersaldot komma att ändras innan din beställning skickats från Systembolagsbutiken till lagret. Detta kan innebära att varan kan komma att ta slut. I dessa fall kommer inte alltid Systembolagsbutiken att kontakta dig, utan det är viktigt att du som beställare följer upp din beställning. Vid frågor eller ändringar, vänligen kontakta den Systembolagsbutik dit du lagt din beställning!</p>
+                <p>9. Vinguiden.com ansvarar inte för om Systembolagets eller den specifika butikens beställningstjänst är avstängd eller ur funktion och därför inte heller för sena leveranser eller att en beställning inte har kommit fram till butik. Men vi arbetar för att tjänsten ska fungera på bästa möjliga sätt.</p>
+                <p>10. De uppgifter om dig du lämnar kommer behandlas enligt personuppgiftslagen (1998:204) och syftet är endast att behandla din beställning. Personuppgiftsansvarig är Vin- &amp; Cocktailguiden i Sverige Aktiebolag, org. nr. 556568-4759. Du har rätt att begära ett besked om vilka personuppgifter som vi behandlar om dig samt att begära rättelse av sådana uppgifter som inte längre stämmer. Ansökan om detta sker genom att skicka en undertecknad begäran till Norrtullsgatan 57, 0tr, 113 45 Stockholm.</p>
+                <p>&nbsp;</p>
+                <h3>Giltighet</h3>
+                <p>Systembolaget accepterar och behandlar samtliga beställningar som du som konsument gör via Vinguiden.com.</p>
+                <p>Vinguiden har fram till den 4 februari 2013 haft en egen beställningsteknik kopplad till Systembolagets. Vinguiden.com menar att vi borde kunna fortsätta använda den teknik vi tillskapat, som varit populär bland våra konsumenter, importörer, och som inte skadat Systembolaget. Vinguiden menar att Systembolagets tvingande att överge sin egen teknik kan strida mot Konkurrenslagens och EU-fördragets förbud mot missbruk av dominerande ställning (Konkurrenslagen (2008:579) 2 kap. 7 §, EUF-fördraget/Romfördraget artikel 102) såväl som EU:s bestämmelser om fri rörlighet för varor (EUF-fördraget/Romfördraget artikel 34).</p>
+                <p>&nbsp;</p>
+                <p>Systembolaget har den 4 februari 2013 aktivt stängt av Vinguidens beställningstjänst som varit i bruk sedan 2007. Därför har Vinguiden gått över till Systembolagets egen så kallade Dryckeslista. Det är det alternativ som gives av Systembolaget. Vinguiden beklagar detta.</p>
+                <h3>Länkar</h3>
+                <p><a href="http://eur-lex.europa.eu/LexUriServ/LexUriServ.do?uri=OJ:C:2010:083:FULL:SV:PDF" target="_blank">EUF-fördraget/Romfördraget</a></p>
+                <p><a href="http://www.notisum.se/rnp/sls/lag/20080579.HTM" target="_blank">Konkurrenslagen</a></p>
+                <div></div>
+                <div>
+                    <h3>Godkännande</h3>
+                </div>
+                <div></div>
+                <div>Den epostadress och mobilnummer du uppger vid beställning kommer att användas av Systembolaget för att kontakta dig när varorna kommer till butiken.<br />
+                    Du har också godkänt att få tips, information och annonser via mail från Vinguiden.com. Du kan även få SMS till din mobiltelefon.<br />
+                    Närhelst du önskar kan du <span style="text-decoration: underline;">enkelt med ett knapptryck i utskicket avbryta mailutskicken, och/eller SMS utskicken</span>.</div>
+                <div></div>
+                <div style="margin-top: 10px; margin-bottom: 10px; height: 1px; background-color: #000000;"></div>
+                <div></div>
+                <div><em>Vinguiden.com förbehåller sig rätten att ändra villkoren på denna sida. Uppdaterade villkor är giltiga från och med de ligger publicerade på webbplatsen.</em></div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="header-wrap">
+        <div id="alert-show"></div>
+
+        <div class="header-sitefamily-wrap">
+            <div class="header-sitefamily-wrap-inner">
+                <div class="header-sitefamily">
+
+                    <div class="header-sitefamily-title"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/sitefamily-logo.png" alt="" border="0" height="26" /> Besök gärna våra systersajter</div>
+
+
+                    <ul class="flex">
+                        <li>
+                            <a href="https://www.vinguiden.com"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/flarp-vinguiden.jpg" alt="" border="0" /></a>
+
+                            <div class="header-sitefamily-desc">
+                                <span class="header-sitefamily-textcolor-vg">Vinguiden.com</span> handlar om inspiration, guidning, kunskap och tips inom vinvärlden. Få nyhetsbrev, se webb-tv, läs vårt magasin.
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://www.vinguiden.com/matguiden/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/flarp-matguiden.jpg" alt="" border="0" /></a>
+
+                            <div class="header-sitefamily-desc">
+                                <span class="header-sitefamily-textcolor-mg">Matguiden.com</span> är en plats
+                                för dig som älskar att laga mat
+                                som både smakar och ser bra ut.
+                                Vi belyser trender och informerar
+                                om olika tekniker.
+                            </div>
+
+                        </li>
+                        <li>
+                            <a href="https://www.vinguiden.com/olguiden/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/flarp-olguiden.jpg" alt="" border="0" /></a>
+
+                            <div class="header-sitefamily-desc">
+                                <span class="header-sitefamily-textcolor-og">Ölguiden.com</span> är en plats
+                                för dig som älskar ölens konst.
+                                Vi besöker mikrobryggerier och
+                                andra producenter. Vi inspirerar och informerar.
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://www.vinguiden.com/whiskyguiden/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/flarp-whiskyguiden.jpg" alt="" border="0" /></a>
+
+                            <div class="header-sitefamily-desc">
+                                <span class="header-sitefamily-textcolor-wg">Whiskyguiden.com</span> en sajt för
+                                dig som älskar whisky. Få inspiration,
+                                nyheter, trender och tips.
+                                Vilken speyside smakar bäst
+                                till våren? Kanske vi har svaret?
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://www.vinguiden.com/dessertguiden/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/flarp-dessertguiden.jpg" alt="" border="0" /></a>
+
+                            <div class="header-sitefamily-desc">
+                                <span class="header-sitefamily-textcolor-dg">Dessertguiden.com</span> är en plats
+                                där du hämtar inspiration och
+                                kunskap. Vi följer media och
+                                världens trender. Häng med
+                                lär nytt och bättre.
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>		<div class="header-flarp header-flarp-open"></div>
+
+        <div id="header">
+
+            <div id="header-logo"><a href="https://www.vinguiden.com/cocktailguiden/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/header-logo.png" border="0" alt="" /></a></div>
+
+            <div id="header-right">
+
+                <ul class="header-menu-buttons">
+
+
+                    <li class="header-menu-button-hover" id="header-login-button">Logga in</li>
+                    <li class="header-menu-button-hover" id="header-register-button">Registrera</li>
+
+                    <li class="header-menu-button-hover" id="header-category-button">
+                        <span style="display: block;float: left;"><a href="https://www.vinguiden.com/cocktailguiden/drinkar/">Drinkar</a></span>
+                        <img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/menu-arrow-hover.png" style=" float: right;  padding-top: 9px;padding-left: 6px;height: 14px;" />
+                        <div id="drink-category-menu">
+                            <ul>
+                                <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/alkoholfritt/">Alkoholfritt</a></li>
+                                <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/champagne/">Champagne</a></li>
+                                <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/gin/">Gin</a></li>
+                                <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/kaffe/">Kaffe</a></li>
+                                <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/konjak/">Konjak</a></li>
+                                <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/rom/">Rom</a></li>
+                                <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/shots/">Shots</a></li>
+                                <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/tequila/">Tequila</a></li>
+                                <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/vodka/">Vodka</a></li>
+                                <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/whisky/">Whisky</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header-menu-button-hover" id="header-menu-button">
+                        <span style="display: block;float: left;">Meny</span>
+                        <img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/menu-arrow-hover.png" style=" float: right;  padding-top: 9px;padding-left: 6px;height: 14px;" />
+                        <div id="dropdownmenu">
+                            <ul>
+                                <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/drinkar/'" class="menu-item-drinks"><a href="https://www.vinguiden.com/cocktailguiden/drinkar/">Drinkar</a></li>
+                                <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/sok/'" class="menu-item-produkter"><a href="https://www.vinguiden.com/cocktailguiden/sok/">Produkter</a></li>
+                                <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/ravaror/'" class="menu-item-ravaror"><a href="https://www.vinguiden.com/cocktailguiden/ravaror/">Råvaror</a></li>
+                                <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/webb-tv/'" class="menu-item-webb-tv"><a href="https://www.vinguiden.com/cocktailguiden/webb-tv/">Webb-Tv</a></li>
+                                <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/aktuellt/'" class="menu-item-nyheter"><a href="https://www.vinguiden.com/cocktailguiden/aktuellt/">Nyheter</a></li>
+                                <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/artiklar/'" class="menu-item-nyheter"><a href="https://www.vinguiden.com/cocktailguiden/artiklar/">Artiklar</a></li>
+                                <li class="menu-item-vgmag"><a href="//www.vinguiden.com/vgmag/">VGMAG</a></li>
+                                <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/nyhetsbrev/'" class="menu-item-nyhetsbrev"><a href="https://www.vinguiden.com/cocktailguiden/nyhetsbrev/">Nyhetsbrev</a></li>
+                                <li onclick="location.href='//www.vinguiden.com/dessertguiden/'" class="menu-item-dessertguiden"><a href="//www.vinguiden.com/dessertguiden/">Dessertguiden</a></li>
+                                <li onclick="location.href='//www.vinguiden.com/matguiden/'" class="menu-item-matguiden"><a href="//www.vinguiden.com/matguiden/">Matguiden</a></li>
+                                <li onclick="location.href='//www.vinguiden.com/'" class="menu-item-vinguiden"><a href="//www.vinguiden.com/">Vinguiden</a></li>
+                                <li onclick="location.href='//www.vinguiden.com/whiskyguiden/'" class="menu-item-whiskyguiden"><a href="//www.vinguiden.com/whiskyguiden/">Whiskyguiden</a></li>
+                                <li onclick="location.href='//www.vinguiden.com/olguiden/'" class="menu-item-olguiden"><a href="//www.vinguiden.com/olguiden/">Ölguiden</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="header-menu-button-hover" class="search" style="position: relative;">
+                        <div class="search-slide">
+                            <form method="get" action="https://www.vinguiden.com/cocktailguiden/sok/">
+                                <input type="text" name="searchString" class="input-white" value="Vad vill du söka efter?" style="margin-right: 10px;width: 285px;margin-left: 6px; margin-top: 6px;" onfocus="this.value=(this.value==this.defaultValue) ? '' : this.value;" onblur="this.value=(this.value=='') ? this.defaultValue : this.value;" />
+                                <input type="submit" class="button-standard" style="font-size: 12px;height: 38px;" value="Sök" />
+                            </form>
+                        </div>
+                        <img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-search.png" alt="Klicka här för att söka produkter" class="search-button" height="22" />
+                    </li>
+                    <li class="header-menu-icon header-menu-button-hover" onclick="location.href='https://www.vinguiden.com/cocktailguiden/mina-favoriter/'">
+                        <a href="https://www.vinguiden.com/cocktailguiden/mina-favoriter/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-favorite-white.png" alt="" height="22" /></a>
+                    </li>
+                    <li class="header-menu-icon header-menu-button-hover" onclick="location.href='https://www.vinguiden.com/cocktailguiden/varukorg/'">
+
+                        <div class="header-icon-number" id="totalvaror">0</div>
+                        <a href="https://www.vinguiden.com/cocktailguiden/varukorg/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-cart.png" alt="" height="22" /></a>
+                    </li>
+                </ul>
+                <div class="clear"></div>
+
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function(){
+                    $("#mobile-menu-button").click(function(){
+                        //Justerar höjden på inre diven till mobilmenyn
+                        var h = window.innerHeight - $("#header-wrap").height();
+                        $('.menu-inner-div').css('max-height', h);
+
+                        $("#mobile-usermenu").hide(500);
+                        $("#mobile-drinkmenu").hide(500);
+                        $("#mobile-menu").slideToggle(500);
+                    });
+
+                    $("#mobile-usermenu-button").click(function(){
+                        //Justerar höjden på inre diven till mobilmenyn
+                        var h = window.innerHeight - $("#header-wrap").height();
+                        $('.menu-inner-div').css('max-height', h);
+
+                        $("#mobile-menu").hide(500);
+                        $("#mobile-drinkmenu").hide(500);
+                        $("#mobile-usermenu").slideToggle(500);
+                    });
+
+                    $("#mobile-drinkmenu-button").click(function(){
+                        //Justerar höjden på inre diven till mobilmenyn
+                        var h = window.innerHeight - $("#header-wrap").height();
+                        $('.menu-inner-div').css('max-height', h);
+
+                        $("#mobile-menu").hide(500);
+                        $("#mobile-usermenu").hide(500);
+                        $("#mobile-drinkmenu").slideToggle(500);
+                    });
+                });
+            </script>
+
+            <div id="mobile-navbar">
+                <ul id="mobile-navbar-ul">
+                    <li id="mobile-menu-button"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-nav-menu.png" alt="" /></li>
+                    <li id="mobile-usermenu-button"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/menu-icon-profil.png"  alt="" /></li>
+                    <li id="mobile-drinkmenu-button"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/menu-icon-drinks.png" alt="" /></li>
+                    <li class="search-button"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-search.png" alt="" /></li>
+                    <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/mina-favoriter/'"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-favorite-white.png" alt="" /></li>
+                    <li style="position: relative;color: #fff;">
+                        <div class="header-icon-number" id="totalvaror">0</div>
+                        <img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-cart.png" alt="" />
+                    </li>
+                </ul>
+                <div class="clear"></div>
+
+                <div id="mobile-menu">
+                    <div class="menu-inner-div">
+                        <ul>
+                            <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/drinkar/'" class="menu-item-drinks"><a href="https://www.vinguiden.com/cocktailguiden/drinkar/">Drinkar</a></li>
+                            <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/sok/'" class="menu-item-produkter"><a href="https://www.vinguiden.com/cocktailguiden/sok/">Produkter</a></li>
+                            <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/ravaror/'" class="menu-item-ravaror"><a href="https://www.vinguiden.com/cocktailguiden/ravaror/">Råvaror</a></li>
+                            <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/webb-tv/'" class="menu-item-webb-tv"><a href="https://www.vinguiden.com/cocktailguiden/webb-tv/">Webb-Tv</a></li>
+                            <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/aktuellt/'" class="menu-item-nyheter"><a href="https://www.vinguiden.com/cocktailguiden/aktuellt/">Nyheter</a></li>
+                            <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/artiklar/'" class="menu-item-nyheter"><a href="https://www.vinguiden.com/cocktailguiden/artiklar/">Artiklar</a></li>
+                            <li class="menu-item-vgmag"><a href="//www.vinguiden.com/vgmag/">VGMAG</a></li>
+                            <li onclick="location.href='https://www.vinguiden.com/cocktailguiden/nyhetsbrev/'" class="menu-item-nyhetsbrev"><a href="https://www.vinguiden.com/cocktailguiden/nyhetsbrev/">Nyhetsbrev</a></li>
+                            <li onclick="location.href='//www.vinguiden.com/dessertguiden/'" class="menu-item-dessertguiden"><a href="//www.vinguiden.com/dessertguiden/">Dessertguiden</a></li>
+                            <li onclick="location.href='//www.vinguiden.com/matguiden/'" class="menu-item-matguiden"><a href="//www.vinguiden.com/matguiden/">Matguiden</a></li>
+                            <li onclick="location.href='//www.vinguiden.com'" class="menu-item-vinguiden"><a href="//www.vinguiden.com">Vinguiden</a></li>
+                            <li onclick="location.href='//www.vinguiden.com/whiskyguiden/'" class="menu-item-whiskyguiden"><a href="//www.vinguiden.com/whiskyguiden/">Whiskyguiden</a></li>
+                            <li onclick="location.href='//www.vinguiden.com/olguiden/'" class="menu-item-olguiden"><a href="//www.vinguiden.com/olguiden/">Ölguiden</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="mobile-usermenu">
+                    <div class="menu-inner-div">
+                        <ul>
+                            <li class="login-button menu-item-loggain">Logga in</li>
+                            <li class="register-button menu-item-bli-medlem">Registrera</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="mobile-drinkmenu">
+                    <div class="menu-inner-div">
+                        <ul>
+                            <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/">Alla drinkar</a></li>
+                            <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/alkoholfritt/">Alkoholfritt</a></li>
+                            <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/champagne/">Champagne</a></li>
+                            <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/gin/">Gin</a></li>
+                            <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/kaffe/">Kaffe</a></li>
+                            <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/konjak/">Konjak</a></li>
+                            <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/rom/">Rom</a></li>
+                            <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/shots/">Shots</a></li>
+                            <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/tequila/">Tequila</a></li>
+                            <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/vodka/">Vodka</a></li>
+                            <li><a href="https://www.vinguiden.com/cocktailguiden/drinkar/whisky/">Whisky</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>			<div class="clear"></div>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function(e) {
+                $(".sok-select-land").change(function(){
+                    var land = $(this).val();
+                    var data = 'land='+ land;
+
+                    $.ajax({
+                        cache: false,
+                        type: "POST",
+                        url: "//www.vinguiden.com/wp-content/themes/vinguiden/functions/ursprung.php",
+                        data: data,
+                        beforeSend: function(html) { // this happens before actual call
+
+                        },
+                        success: function(html){ // this happens after we get results
+                            $(".sok-select-region").html(html);
+                        }
+                    });
+                });
+
+            });
+        </script>
+
+
+        <div class="box-wrapper-fastsearch">
+            <form id="filtrera-sokning" method="get" action="https://www.vinguiden.com/cocktailguiden/sok/">
+                <div class="search-box-inner">
+
+                    <div id="searchVGTextBg">
+                        <div class="search-button-holder">
+                            <input class="button-red" type="submit" id="searchSubmit" value="Sök" />
+                        </div>
+                        <div class="search-input-holder">
+                            <p id="searchVGTextP"><input type="text" id="searchVGText" class="input-white" name="searchString" placeholder="Skriv vad du söker ex. art.nr eller produktnamn" /></p>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <div class="stor-search">
+
+                        <div class="filter-show a-red">
+                            <div class="filter-show-text">Filtrera din sökning</div>
+                            <div class="filter-show-arrow"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/menu-arrow-hover.png" border="0" alt="" style="vertical-align: 2px;height: 5px;" /></div>
+                            <div class="clear">	</div>
+                        </div>
+
+                        <div class="filter-holder">
+                            <ul class="filter-holder-ul stor-search-wrap">
+                                <li>
+                                    <p>LAND</p>
+                                    <p>
+                                        <select class="input-white sok-select sok-select-land input-w100p filter-input" name="land">
+                                            <option value="">Välj ett land</option>
+                                            <option value="Argentina" >Argentina</option>
+                                            <option value="Australien" >Australien</option>
+                                            <option value="Chile" >Chile</option>
+                                            <option value="Frankrike" >Frankrike</option>
+                                            <option value="Italien" >Italien</option>
+                                            <option value="Nya Zeeland" >Nya Zeeland</option>
+                                            <option value="Portugal" >Portugal</option>
+                                            <option value="Spanien" >Spanien</option>
+                                            <option value="Sydafrika" >Sydafrika</option>
+                                            <option value="Tyskland" >Tyskland</option>
+                                            <option value="USA" >USA</option>
+                                            <option value="">--------------------</option>
+                                            <option value="Armenien" >Armenien</option>
+                                            <option value="Bahamas" >Bahamas</option>
+                                            <option value="Barbados" >Barbados</option>
+                                            <option value="Belgien" >Belgien</option>
+                                            <option value="Belize" >Belize</option>
+                                            <option value="Bosnien-Hercegovina" >Bosnien-Hercegovina</option>
+                                            <option value="Brasilien" >Brasilien</option>
+                                            <option value="Bulgarien" >Bulgarien</option>
+                                            <option value="Colombia" >Colombia</option>
+                                            <option value="Costa Rica" >Costa Rica</option>
+                                            <option value="Cypern" >Cypern</option>
+                                            <option value="Danmark" >Danmark</option>
+                                            <option value="Dominikanska Republiken" >Dominikanska Republiken</option>
+                                            <option value="Egypten" >Egypten</option>
+                                            <option value="Eritrea" >Eritrea</option>
+                                            <option value="Estland" >Estland</option>
+                                            <option value="Etiopien" >Etiopien</option>
+                                            <option value="EU" >EU</option>
+                                            <option value="Fiji" >Fiji</option>
+                                            <option value="Filippinerna" >Filippinerna</option>
+                                            <option value="Finland" >Finland</option>
+                                            <option value="Folkrepubliken Kina" >Folkrepubliken Kina</option>
+                                            <option value="Förpackning" >Förpackning</option>
+                                            <option value="Georgien" >Georgien</option>
+                                            <option value="Grekland" >Grekland</option>
+                                            <option value="Grenada" >Grenada</option>
+                                            <option value="Guatemala" >Guatemala</option>
+                                            <option value="Guyana" >Guyana</option>
+                                            <option value="Haiti" >Haiti</option>
+                                            <option value="Indien" >Indien</option>
+                                            <option value="Indonesien" >Indonesien</option>
+                                            <option value="Internationellt märke" >Internationellt märke</option>
+                                            <option value="Irland" >Irland</option>
+                                            <option value="Island" >Island</option>
+                                            <option value="Israel" >Israel</option>
+                                            <option value="Jamaica" >Jamaica</option>
+                                            <option value="Japan" >Japan</option>
+                                            <option value="Kanada" >Kanada</option>
+                                            <option value="Kenya" >Kenya</option>
+                                            <option value="Kosovo" >Kosovo</option>
+                                            <option value="Kroatien" >Kroatien</option>
+                                            <option value="Kuba" >Kuba</option>
+                                            <option value="Laos" >Laos</option>
+                                            <option value="Lettland" >Lettland</option>
+                                            <option value="Libanon" >Libanon</option>
+                                            <option value="Litauen" >Litauen</option>
+                                            <option value="Luxemburg" >Luxemburg</option>
+                                            <option value="Madagaskar" >Madagaskar</option>
+                                            <option value="Makedonien (F.Y.R.O.M)" >Makedonien (F.Y.R.O.M)</option>
+                                            <option value="Malta" >Malta</option>
+                                            <option value="Marocko" >Marocko</option>
+                                            <option value="Mauritius" >Mauritius</option>
+                                            <option value="Mexiko" >Mexiko</option>
+                                            <option value="Moldavien" >Moldavien</option>
+                                            <option value="Montenegro" >Montenegro</option>
+                                            <option value="Namibia" >Namibia</option>
+                                            <option value="Nederländerna" >Nederländerna</option>
+                                            <option value="Nicaragua" >Nicaragua</option>
+                                            <option value="Nigeria" >Nigeria</option>
+                                            <option value="Norge" >Norge</option>
+                                            <option value="Okänt ursprung" >Okänt ursprung</option>
+                                            <option value="Palestina" >Palestina</option>
+                                            <option value="Panama" >Panama</option>
+                                            <option value="Paraguay" >Paraguay</option>
+                                            <option value="Peru" >Peru</option>
+                                            <option value="Polen" >Polen</option>
+                                            <option value="Republiken Makedonien" >Republiken Makedonien</option>
+                                            <option value="Republiken Togo" >Republiken Togo</option>
+                                            <option value="Rumänien" >Rumänien</option>
+                                            <option value="Ryssland" >Ryssland</option>
+                                            <option value="Schweiz" >Schweiz</option>
+                                            <option value="Serbien" >Serbien</option>
+                                            <option value="Singapore" >Singapore</option>
+                                            <option value="Slovakien" >Slovakien</option>
+                                            <option value="Slovenien" >Slovenien</option>
+                                            <option value="Sri Lanka" >Sri Lanka</option>
+                                            <option value="St Lucia" >St Lucia</option>
+                                            <option value="Storbritannien" >Storbritannien</option>
+                                            <option value="Surinam" >Surinam</option>
+                                            <option value="Sverige" >Sverige</option>
+                                            <option value="Sydkorea" >Sydkorea</option>
+                                            <option value="Thailand" >Thailand</option>
+                                            <option value="Tjeckien" >Tjeckien</option>
+                                            <option value="Trinidad" >Trinidad</option>
+                                            <option value="Tunisien" >Tunisien</option>
+                                            <option value="Turkiet" >Turkiet</option>
+                                            <option value="Uganda" >Uganda</option>
+                                            <option value="Ukraina" >Ukraina</option>
+                                            <option value="Ungern" >Ungern</option>
+                                            <option value="Uruguay" >Uruguay</option>
+                                            <option value="Varierande ursprung" >Varierande ursprung</option>
+                                            <option value="Venezuela" >Venezuela</option>
+                                            <option value="Vietnam" >Vietnam</option>
+                                            <option value="Österrike" >Österrike</option>
+                                            <option value="Övriga ursprung" >Övriga ursprung</option>
+                                        </select>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>PRODUKT</p>
+                                    <p><select class="input-white sok-select sok-select-produkttyp input-w100p filter-input" name="typ">
+                                        <option value="">Välj produkttyp</option>
+                                        <option value="1" >Rött vin</option>
+                                        <option value="2" >Vitt vin</option>
+                                        <option value="3" >Rosévin</option>
+                                        <option value="4" >Mousserande vin</option>
+                                        <option value="5" >Öl</option>
+                                        <option value="6" >Cider</option>
+                                        <option value="7" >Gin</option>
+                                        <option value="8" >Whisky</option>
+                                        <option value="9" >Alkoholfritt</option>
+                                    </select></p>
+                                </li>
+                                <li>
+                                    <p>OMDÖME</p>
+                                    <p><select class="input-white sok-select sok-select-omdome input-w100p filter-input" name="omdome">
+                                        <option value="">Välj lägsta omdöme</option>
+                                        <option value="1" >1</option>
+                                        <option value="2" >2</option>
+                                        <option value="3" >3</option>
+                                        <option value="4" >4</option>
+                                        <option value="5" >5</option>
+                                    </select></p>
+
+                                </li>
+                                <li>
+                                    <p>FÖRPACKNING</p>
+                                    <p><select class="input-white sok-select sok-select-omdome input-w100p filter-input" name="forpackning">
+                                        <option value="">Välj förpackning</option>
+                                        <option value="1" >Flaska</option>
+                                        <option value="2" >Box</option>
+                                        <option value="3" >Burk</option>
+                                        <option value="4" >Magnum</option>
+                                        <option value="5" >Minibutelj</option>
+                                        <option value="6" >Fat</option>
+                                    </select></p>
+                                </li>
+                                <li>
+                                    <p>REGION</p>
+                                    <p><select class="input-white sok-select sok-select-region input-w100p filter-input" name="region">
+                                        <option value="">Välj en region</option>
+                                        <option value="">Välj ett land först</option>
+                                    </select></p>
+                                </li>
+                                <li>
+                                    <p>IMPORTÖR</p>
+                                    <p><select class="input-white sok-select sok-select-importor input-w100p filter-input" name="import">
+                                        <option value="">Välj importör</option>
+                                        <option value="1413 Bryggkultur AB">1413 Bryggkultur AB</option><option value="2Glas">2Glas</option><option value="3b Export HB">3b Export HB</option><option value="4 Great Wines Stockholm AB">4 Great Wines Stockholm AB</option><option value="a & m goodinstinkt AB">a & m goodinstinkt AB</option><option value="A Wendler Försäljnings AB">A Wendler Försäljnings AB</option><option value="A Wine in Sweden AB">A Wine in Sweden AB</option><option value="AA Oil">AA Oil</option><option value="AB Brygghuset Finn">AB Brygghuset Finn</option><option value="AB Dimanche">AB Dimanche</option><option value="AB Eleganten Öl & Sprit">AB Eleganten Öl & Sprit</option><option value="AB Mohawk Brewing Company">AB Mohawk Brewing Company</option><option value="AB No 1 Brands">AB No 1 Brands</option><option value="AB Svenska Sprit TBH">AB Svenska Sprit TBH</option><option value="AB Wicked Wine Sweden">AB Wicked Wine Sweden</option><option value="ÅBC Åredalens BryggCompagni AB">ÅBC Åredalens BryggCompagni AB</option><option value="About Beer Västra hamnen">About Beer Västra hamnen</option><option value="Åbro Bryggeri">Åbro Bryggeri</option><option value="Ad Libitum AB">Ad Libitum AB</option><option value="Adelsö Bryggeri AB">Adelsö Bryggeri AB</option><option value="AdwinesOktab  Stockholm AB">AdwinesOktab  Stockholm AB</option><option value="Aeterno AB">Aeterno AB</option><option value="Affes Beer & Wine Import">Affes Beer & Wine Import</option><option value="Agent Clay AB">Agent Clay AB</option><option value="Ahlafors Bryggerier AB">Ahlafors Bryggerier AB</option><option value="Ahlén & Small Trading AB">Ahlén & Small Trading AB</option><option value="AIS Alcohol Import for Scandinavia HB">AIS Alcohol Import for Scandinavia HB</option><option value="Åke Wester">Åke Wester</option><option value="Akebono Unlimited AB">Akebono Unlimited AB</option><option value="Aktiebolaget Centralbryggeriet i Linköping">Aktiebolaget Centralbryggeriet i Linköping</option><option value="Aktiebolaget Roslags Näsby Bryggeri">Aktiebolaget Roslags Näsby Bryggeri</option><option value="Alambic Försäljnings AB">Alambic Försäljnings AB</option><option value="Albani Sverige AB">Albani Sverige AB</option><option value="Albert&Lily AB">Albert&Lily AB</option><option value="AliasSmith AB">AliasSmith AB</option><option value="Alingsås Bryggeri AB">Alingsås Bryggeri AB</option><option value="All in beverage AB">All in beverage AB</option><option value="Allwine AB">Allwine AB</option><option value="Alptrading Handelsbolag">Alptrading Handelsbolag</option><option value="Alshammar Import">Alshammar Import</option><option value="Altia Sweden AB">Altia Sweden AB</option><option value="Ametller Scandinavia AB">Ametller Scandinavia AB</option><option value="Amicus Winesales AB">Amicus Winesales AB</option><option value="Amka Vinimport AB">Amka Vinimport AB</option><option value="Ampelou Chora Vinimport AB">Ampelou Chora Vinimport AB</option><option value="Ancrona AB">Ancrona AB</option><option value="Andersson Lundeberg Handpicked Wines AB">Andersson Lundeberg Handpicked Wines AB</option><option value="Anderssons Öl AB">Anderssons Öl AB</option><option value="Ängö Kvartersbryggeri AB">Ängö Kvartersbryggeri AB</option><option value="Anisatum AB">Anisatum AB</option><option value="Anterra Sverige AB">Anterra Sverige AB</option><option value="Äppelbo Bryggeri AB">Äppelbo Bryggeri AB</option><option value="Apricatio AB">Apricatio AB</option><option value="Apricot AB">Apricot AB</option><option value="Aratus Sweden AB">Aratus Sweden AB</option><option value="Arctic Beverage Sweden AB">Arctic Beverage Sweden AB</option><option value="Arctic Taste AB">Arctic Taste AB</option><option value="Arcus Sweden AB">Arcus Sweden AB</option><option value="Aries Vin AB">Aries Vin AB</option><option value="Armano's First Class Products AB">Armano's First Class Products AB</option><option value="Aros Import HB">Aros Import HB</option><option value="Arvid Nordquist Vin och Sprithandel">Arvid Nordquist Vin och Sprithandel</option><option value="Arwine AB">Arwine AB</option><option value="Åsalid Design">Åsalid Design</option><option value="Ason Vin HB">Ason Vin HB</option><option value="Astas Vinkälla">Astas Vinkälla</option><option value="Atrio wine AB">Atrio wine AB</option><option value="Auld Rare Whisky Sweden AB">Auld Rare Whisky Sweden AB</option><option value="Aureus Vina AB">Aureus Vina AB</option><option value="Avando Wines AB">Avando Wines AB</option><option value="Avatar Vin & Sprit AB">Avatar Vin & Sprit AB</option><option value="AveAja HB">AveAja HB</option><option value="AvecSweden AB">AvecSweden AB</option><option value="Avivera AB">Avivera AB</option><option value="AWI Andersson Wines International">AWI Andersson Wines International</option><option value="Axelero AB">Axelero AB</option><option value="B8 Sverige AB">B8 Sverige AB</option><option value="Bacardi AB">Bacardi AB</option><option value="Backafallsbyn AB">Backafallsbyn AB</option><option value="Bålsta Bryggeri AB">Bålsta Bryggeri AB</option><option value="Bandol Import HB">Bandol Import HB</option><option value="Banus HB">Banus HB</option><option value="BarlindBeer AB">BarlindBeer AB</option><option value="Barlingbo Bryggeri AB">Barlingbo Bryggeri AB</option><option value="Båstad Bryggeri AB">Båstad Bryggeri AB</option><option value="Båstad Vinhandel AB">Båstad Vinhandel AB</option><option value="Bearded Rabbit Brewery AB">Bearded Rabbit Brewery AB</option><option value="Beco Vinhos AB">Beco Vinhos AB</option><option value="Beer Me Sweden AB">Beer Me Sweden AB</option><option value="Beer Studio AB">Beer Studio AB</option><option value="Beerbliotek AB">Beerbliotek AB</option><option value="Belgodeli">Belgodeli</option><option value="Belle Or HB">Belle Or HB</option><option value="Bergs Vinhandel">Bergs Vinhandel</option><option value="Bergslagens Brygghus AB">Bergslagens Brygghus AB</option><option value="Bergslagens Destilleri AB">Bergslagens Destilleri AB</option><option value="Bergslagens Destilleri Örebro AB">Bergslagens Destilleri Örebro AB</option><option value="Bernard Sverige AB">Bernard Sverige AB</option><option value="Berntson Beer AB">Berntson Beer AB</option><option value="Berntson Brands AB">Berntson Brands AB</option><option value="Berntson Vin AB">Berntson Vin AB</option><option value="Bevco AB">Bevco AB</option><option value="BGS Wine Import">BGS Wine Import</option><option value="BibeBant Scandinavia AB">BibeBant Scandinavia AB</option><option value="Bibendum">Bibendum</option><option value="Big Wolf Beverages AB">Big Wolf Beverages AB</option><option value="BIN Vintage Import">BIN Vintage Import</option><option value="BIN Vintage Import AB">BIN Vintage Import AB</option><option value="Birra Mex AB">Birra Mex AB</option><option value="Bites & Bottles AB">Bites & Bottles AB</option><option value="Bizling Wine & Spirits AB">Bizling Wine & Spirits AB</option><option value="Björketorp Consulting AB">Björketorp Consulting AB</option><option value="Björksavsprodukter i Åre AB">Björksavsprodukter i Åre AB</option><option value="Björn Lundsten">Björn Lundsten</option><option value="Blentarps Vinimport">Blentarps Vinimport</option><option value="BMP Group AB">BMP Group AB</option><option value="Boire AB">Boire AB</option><option value="Boisson Wine & Spirits HB">Boisson Wine & Spirits HB</option><option value="Bombolles wine AB">Bombolles wine AB</option><option value="Bon Cena Ltd, UK filial">Bon Cena Ltd, UK filial</option><option value="Bonasitis AB">Bonasitis AB</option><option value="Bookmaster Holding AB">Bookmaster Holding AB</option><option value="Borås Bryggeri">Borås Bryggeri</option><option value="Bornicon & Salming">Bornicon & Salming</option><option value="Bors & Bor Trading">Bors & Bor Trading</option><option value="Bottenvikens bryggeri">Bottenvikens bryggeri</option><option value="Boucarou Wine & Dine AB">Boucarou Wine & Dine AB</option><option value="Box Destilleri AB">Box Destilleri AB</option><option value="Brandpartners AB">Brandpartners AB</option><option value="Brands For Fans Sweden AB">Brands For Fans Sweden AB</option><option value="Brasri AB">Brasri AB</option><option value="Brasstacks Brewing Company AB">Brasstacks Brewing Company AB</option><option value="BraVin Sverige AB">BraVin Sverige AB</option><option value="Bredalens Gårdsmusteri">Bredalens Gårdsmusteri</option><option value="Brekeriet - Ekofon Media AB">Brekeriet - Ekofon Media AB</option><option value="Brekeriet Beer AB">Brekeriet Beer AB</option><option value="Brewery International Sweden AB">Brewery International Sweden AB</option><option value="Brewing Költur AB">Brewing Költur AB</option><option value="Brewtrade Sweden AB">Brewtrade Sweden AB</option><option value="Brill & Co AB">Brill & Co AB</option><option value="Brilliant Brands Nordic AB">Brilliant Brands Nordic AB</option><option value="Bristly Wine Agents AB">Bristly Wine Agents AB</option><option value="British UK Import AB">British UK Import AB</option><option value="Brunnby Vingård & Bryggeri AB">Brunnby Vingård & Bryggeri AB</option><option value="Brusquini da bere AB">Brusquini da bere AB</option><option value="Bryggeri Fängelset AB">Bryggeri Fängelset AB</option><option value="Bryggeriaktiebolaget Nya Victoria">Bryggeriaktiebolaget Nya Victoria</option><option value="Bryggeriet Stenhammaren AB">Bryggeriet Stenhammaren AB</option><option value="Brygghus 19 AB">Brygghus 19 AB</option><option value="Brygghuset i Sigtuna AB">Brygghuset i Sigtuna AB</option><option value="Bryggverket AB">Bryggverket AB</option><option value="Bubbel i Sverige HB">Bubbel i Sverige HB</option><option value="Bubble Generation KB">Bubble Generation KB</option><option value="Buteljholmen AB">Buteljholmen AB</option><option value="Byaregårdens Brygghus HB">Byaregårdens Brygghus HB</option><option value="Byggver Bryggeri AB">Byggver Bryggeri AB</option><option value="C & C Vinimport AB">C & C Vinimport AB</option><option value="C & E Gastro-Import AB">C & E Gastro-Import AB</option><option value="C A Vinkoncept AB">C A Vinkoncept AB</option><option value="c/o forssén öberg">c/o forssén öberg</option><option value="Calabrian Wines KB">Calabrian Wines KB</option><option value="Calwine AB">Calwine AB</option><option value="Camitz & Lindberger AB">Camitz & Lindberger AB</option><option value="Cariel Spirits AB">Cariel Spirits AB</option><option value="Carlberg Vinhus AB">Carlberg Vinhus AB</option><option value="Carlemår Wine & Spirits AB">Carlemår Wine & Spirits AB</option><option value="Carlsberg Sverige AB">Carlsberg Sverige AB</option><option value="Carlskrona Bryggeri AB">Carlskrona Bryggeri AB</option><option value="Carlstad bryggeri kb">Carlstad bryggeri kb</option><option value="Carnation Spiritus & Cervisia">Carnation Spiritus & Cervisia</option><option value="Carovin AB">Carovin AB</option><option value="Casa PerCe AB">Casa PerCe AB</option><option value="Casacalma">Casacalma</option><option value="Casill HB">Casill HB</option><option value="Cask Kompaniet AB">Cask Kompaniet AB</option><option value="Cask Sweden AB">Cask Sweden AB</option><option value="Castle Wine Nordic AB">Castle Wine Nordic AB</option><option value="Cavarosa Wine AB">Cavarosa Wine AB</option><option value="Cavarosa Wine Ek För">Cavarosa Wine Ek För</option><option value="Cave à Vin HB">Cave à Vin HB</option><option value="Caves du Vineum i Sverige AB">Caves du Vineum i Sverige AB</option><option value="Cavisten Vinhandel">Cavisten Vinhandel</option><option value="Cedentolin AB">Cedentolin AB</option><option value="Cefour Wine & Beverage Partihandel AB">Cefour Wine & Beverage Partihandel AB</option><option value="CenterDom">CenterDom</option><option value="Cesarino Gobbi">Cesarino Gobbi</option><option value="Cezar Beverages">Cezar Beverages</option><option value="Chad Beer AB">Chad Beer AB</option><option value="Chambubbles AB">Chambubbles AB</option><option value="ChampagneExperten by Västerås Sweden HB">ChampagneExperten by Västerås Sweden HB</option><option value="ChampagneHuset CH">ChampagneHuset CH</option><option value="ChampagneHuset Precuritas AB">ChampagneHuset Precuritas AB</option><option value="Charles Paton">Charles Paton</option><option value="CHill Creek AB">CHill Creek AB</option><option value="China Trading Sweden AB">China Trading Sweden AB</option><option value="Chris-Wine AB">Chris-Wine AB</option><option value="Christoffer Edin">Christoffer Edin</option><option value="CiaoAlba HB">CiaoAlba HB</option><option value="CJ Wines AB">CJ Wines AB</option><option value="Classic Wine Sweden AB">Classic Wine Sweden AB</option><option value="ClosProbus KB">ClosProbus KB</option><option value="Clydesdale AB">Clydesdale AB</option><option value="Coast of Lapland Sweden AB">Coast of Lapland Sweden AB</option><option value="Conaxess Trade Sweden AB">Conaxess Trade Sweden AB</option><option value="Concealed Wines AB">Concealed Wines AB</option><option value="Concha y Toro Sweden AB">Concha y Toro Sweden AB</option><option value="Coneuro KB">Coneuro KB</option><option value="Constant Companion AB">Constant Companion AB</option><option value="Contemporary wines Sweden AB">Contemporary wines Sweden AB</option><option value="Conveija Aktiebolag">Conveija Aktiebolag</option><option value="Convino">Convino</option><option value="Coolwine Nordic AB">Coolwine Nordic AB</option><option value="Coppersmith AB">Coppersmith AB</option><option value="Corseimport">Corseimport</option><option value="Cranberries Jakobsson & Lövgren AB">Cranberries Jakobsson & Lövgren AB</option><option value="Culinea Wines">Culinea Wines</option><option value="Custom Made Drinks AB">Custom Made Drinks AB</option><option value="D D Winehouse AB">D D Winehouse AB</option><option value="D Wine&Beverage">D Wine&Beverage</option><option value="Dacasi HB">Dacasi HB</option><option value="Dala Wines & Spirits AB">Dala Wines & Spirits AB</option><option value="Dalarado Brewery">Dalarado Brewery</option><option value="Dalelven Holding AB">Dalelven Holding AB</option><option value="Dana Import HB">Dana Import HB</option><option value="Daniels Wines">Daniels Wines</option><option value="Darom AB">Darom AB</option><option value="DC Sweden AB">DC Sweden AB</option><option value="De Filiper-International">De Filiper-International</option><option value="De Jounge Eurenius AB">De Jounge Eurenius AB</option><option value="De Trei Group">De Trei Group</option><option value="Delighthouse HB">Delighthouse HB</option><option value="DesignBrew Scandinavia AB">DesignBrew Scandinavia AB</option><option value="Destinto AB">Destinto AB</option><option value="Diageo Sweden AB">Diageo Sweden AB</option><option value="Dica Vin & Sprit HB">Dica Vin & Sprit HB</option><option value="Din Mässpartner i Örebro">Din Mässpartner i Örebro</option><option value="Divine AB">Divine AB</option><option value="Domaine Wines Sweden AB">Domaine Wines Sweden AB</option><option value="Doriani Wines AB">Doriani Wines AB</option><option value="Dryckesboden Sverige AB">Dryckesboden Sverige AB</option><option value="Dryckespoolen i Östergötland AB">Dryckespoolen i Östergötland AB</option><option value="DSG Scandinavia AB">DSG Scandinavia AB</option><option value="Dugges Ale- & Porterbryggeri AB">Dugges Ale- & Porterbryggeri AB</option><option value="E Charpentier Imports KB">E Charpentier Imports KB</option><option value="E. Harlaut AB">E. Harlaut AB</option><option value="ECR Vision Buyfair">ECR Vision Buyfair</option><option value="Edrington Sweden AB">Edrington Sweden AB</option><option value="EEE Import AB">EEE Import AB</option><option value="Egnells Bryggeri">Egnells Bryggeri</option><option value="Ekjord Sweden AB">Ekjord Sweden AB</option><option value="Ekologistik Skandinavien AB">Ekologistik Skandinavien AB</option><option value="Eks Tyska Bryggeri AB">Eks Tyska Bryggeri AB</option><option value="Eldvakt AB">Eldvakt AB</option><option value="Eletheria Wine Group & Associates AB">Eletheria Wine Group & Associates AB</option><option value="Elixir HB">Elixir HB</option><option value="Elphin Communication AB">Elphin Communication AB</option><option value="Eminent Sweden HB">Eminent Sweden HB</option><option value="Emri Wine Import AB">Emri Wine Import AB</option><option value="EN Vininspiration AB">EN Vininspiration AB</option><option value="Enje AB">Enje AB</option><option value="Enjoy Wine & Spirits AB">Enjoy Wine & Spirits AB</option><option value="Enomondo AB">Enomondo AB</option><option value="Enoterra AB">Enoterra AB</option><option value="Enrico">Enrico</option><option value="Entoria HB">Entoria HB</option><option value="Eskilstuna Ölkultur AB">Eskilstuna Ölkultur AB</option><option value="Espumante AB">Espumante AB</option><option value="Ett Ord AB">Ett Ord AB</option><option value="Evelin Vastero">Evelin Vastero</option><option value="Exoro Wine Import AB">Exoro Wine Import AB</option><option value="ExpertWine Naturvin AB">ExpertWine Naturvin AB</option><option value="ExpertWine Sweden AB">ExpertWine Sweden AB</option><option value="Facile & Co AB">Facile & Co AB</option><option value="Falu Brygghus AB">Falu Brygghus AB</option><option value="Fina Smaker Sverige AB">Fina Smaker Sverige AB</option><option value="Fine Brands Sweden AB">Fine Brands Sweden AB</option><option value="Fine Winer Sverige AB">Fine Winer Sverige AB</option><option value="Fine Wines Sweden AB">Fine Wines Sweden AB</option><option value="Firma Surama">Firma Surama</option><option value="First Signs of Water AB">First Signs of Water AB</option><option value="Fisherstorm Filial til Berentsens Brygghus AS Norway">Fisherstorm Filial til Berentsens Brygghus AS Norway</option><option value="Fiskebäcksbryggeriet AB">Fiskebäcksbryggeriet AB</option><option value="Five Eye's AB">Five Eye's AB</option><option value="Fjäderholmarnas Bryggeri AB">Fjäderholmarnas Bryggeri AB</option><option value="Flying Brewery AB">Flying Brewery AB</option><option value="Fondberg">Fondberg</option><option value="Fontana Food AB">Fontana Food AB</option><option value="Foodspice">Foodspice</option><option value="Force of Action AB">Force of Action AB</option><option value="ForsCon AB">ForsCon AB</option><option value="Forsell Vinhandel">Forsell Vinhandel</option><option value="Fredholms Vin">Fredholms Vin</option><option value="Fredrikslunds Gård AB">Fredrikslunds Gård AB</option><option value="Freixenet Nordic AB">Freixenet Nordic AB</option><option value="French Wine Associations HB">French Wine Associations HB</option><option value="Fullersta Vineyards Handelsbolag">Fullersta Vineyards Handelsbolag</option><option value="Fulltofta Gårdsbryggeri AB">Fulltofta Gårdsbryggeri AB</option><option value="Future Wines Sweden AB">Future Wines Sweden AB</option><option value="Gae AB">Gae AB</option><option value="Gajane Gross KB">Gajane Gross KB</option><option value="Galatea AB">Galatea AB</option><option value="Galatea Spirits AB">Galatea Spirits AB</option><option value="GalleriLi AB">GalleriLi AB</option><option value="Gamla Enskede Bryggeri">Gamla Enskede Bryggeri</option><option value="Gamla Slottskällans Bryggeri AB">Gamla Slottskällans Bryggeri AB</option><option value="Gammalsvenskby AB">Gammalsvenskby AB</option><option value="Gammelstilla Whisky AB">Gammelstilla Whisky AB</option><option value="Gardeproduction AB">Gardeproduction AB</option><option value="Gardo & Morris AB">Gardo & Morris AB</option><option value="Gåshaga Gourmet AB">Gåshaga Gourmet AB</option><option value="Gastronomic Wines AB">Gastronomic Wines AB</option><option value="Gaumarjos Vin AB">Gaumarjos Vin AB</option><option value="Gavin Wine HB">Gavin Wine HB</option><option value="Georg Strömfelt">Georg Strömfelt</option><option value="Georgian Wine Legacy AB">Georgian Wine Legacy AB</option><option value="Giertz Vinimport AB">Giertz Vinimport AB</option><option value="GK Wines">GK Wines</option><option value="GL Brands AB">GL Brands AB</option><option value="Gladivin">Gladivin</option><option value="Globe Trans J.A.">Globe Trans J.A.</option><option value="Gnesta Bränneri AB">Gnesta Bränneri AB</option><option value="GodDryck i Sverige AB">GodDryck i Sverige AB</option><option value="Good Guys Brew">Good Guys Brew</option><option value="Goodtrade Scandinavia AB">Goodtrade Scandinavia AB</option><option value="Göteborgs Nya Bryggeri AB">Göteborgs Nya Bryggeri AB</option><option value="Göteborgs Vinhandelshus AB">Göteborgs Vinhandelshus AB</option><option value="Granqvist Beverage House AB">Granqvist Beverage House AB</option><option value="Granqvist Vinagentur">Granqvist Vinagentur</option><option value="Grape & Grain STHLM HB">Grape & Grain STHLM HB</option><option value="Grapes Svenska AB">Grapes Svenska AB</option><option value="Grapestyle Scandinavia">Grapestyle Scandinavia</option><option value="Grästorps Bryggeri AB">Grästorps Bryggeri AB</option><option value="Grästorpsbryggeri HB">Grästorpsbryggeri HB</option><option value="Great Brands AB">Great Brands AB</option><option value="Great Wines i Linköping AB">Great Wines i Linköping AB</option><option value="Grebbestad Bryggeri">Grebbestad Bryggeri</option><option value="Grebbestad Bryggeri AB">Grebbestad Bryggeri AB</option><option value="GRG Maremma">GRG Maremma</option><option value="Grönsöö Säteri AB">Grönsöö Säteri AB</option><option value="Grufvan Handelsbolag">Grufvan Handelsbolag</option><option value="Grythyttan Vin">Grythyttan Vin</option><option value="Grythyttan Whisky AB">Grythyttan Whisky AB</option><option value="Grythyttans Brygghus AB">Grythyttans Brygghus AB</option><option value="Gullberg by Stockwine AB">Gullberg by Stockwine AB</option><option value="Gunnar Sahlin">Gunnar Sahlin</option><option value="GustaVino AB">GustaVino AB</option><option value="Gusto Divino i Göteborg AB">Gusto Divino i Göteborg AB</option><option value="Gute Vingård AB">Gute Vingård AB</option><option value="Gyllenberg Care HB">Gyllenberg Care HB</option><option value="Habibi Stockholm AB">Habibi Stockholm AB</option><option value="Hagabions Cafè AB">Hagabions Cafè AB</option><option value="Håks Gård">Håks Gård</option><option value="Hällåkra Vingård AB">Hällåkra Vingård AB</option><option value="Haller Vin HB">Haller Vin HB</option><option value="Halmstad Brygghus AB">Halmstad Brygghus AB</option><option value="Handelsbolaget R&P Beverage">Handelsbolaget R&P Beverage</option><option value="Handpicked Wines Sweden AB">Handpicked Wines Sweden AB</option><option value="Hantverksbryggeriet AB">Hantverksbryggeriet AB</option><option value="Happy in The Hat AB">Happy in The Hat AB</option><option value="Happy Palate Wines AB">Happy Palate Wines AB</option><option value="HATT et söner AB">HATT et söner AB</option><option value="Haugen-Gruppen AB">Haugen-Gruppen AB</option><option value="Haugen-Gruppen Wine & Spirits AB">Haugen-Gruppen Wine & Spirits AB</option><option value="Havsjö Delikatesser AB">Havsjö Delikatesser AB</option><option value="Heavy MetAle Brewery AB">Heavy MetAle Brewery AB</option><option value="Heba Food & Beverages AB">Heba Food & Beverages AB</option><option value="Hellesen-Hansen Mats">Hellesen-Hansen Mats</option><option value="Helsingborgs Bryggeri AB">Helsingborgs Bryggeri AB</option><option value="Hemberga Brunn AB">Hemberga Brunn AB</option><option value="Hemberga Dryckesgrossisten AB">Hemberga Dryckesgrossisten AB</option><option value="Hemfjällsstugan AB">Hemfjällsstugan AB</option><option value="Henkell & Co Sverige AB">Henkell & Co Sverige AB</option><option value="Herdenstam Vinhandel">Herdenstam Vinhandel</option><option value="Herida Aurum AB">Herida Aurum AB</option><option value="Hermansson & Co AB">Hermansson & Co AB</option><option value="Hernö brenneri AB">Hernö brenneri AB</option><option value="Hernö Gin AB">Hernö Gin AB</option><option value="Hernö Hantverksöl HB">Hernö Hantverksöl HB</option><option value="High Coast Wine AB">High Coast Wine AB</option><option value="Hjo Grosshandel AB">Hjo Grosshandel AB</option><option value="Höbingers Förvaltnings AB">Höbingers Förvaltnings AB</option><option value="Hoff Vinhandel AB">Hoff Vinhandel AB</option><option value="Höganäs Bryggeri AB">Höganäs Bryggeri AB</option><option value="Högberga Vinfabrik AB">Högberga Vinfabrik AB</option><option value="Holavedens Handel Hus Ek för">Holavedens Handel Hus Ek för</option><option value="Home of Drinks AB">Home of Drinks AB</option><option value="Home Studio Revsund HB">Home Studio Revsund HB</option><option value="Hönöbryggeriet AB">Hönöbryggeriet AB</option><option value="Hops & Grapes AB">Hops & Grapes AB</option><option value="Hops N' Leon of Skaraborg AB">Hops N' Leon of Skaraborg AB</option><option value="Horn Vingård AB">Horn Vingård AB</option><option value="House of Wine Georgia AB">House of Wine Georgia AB</option><option value="Hübsch Vinhandel AB">Hübsch Vinhandel AB</option><option value="Hults Dryck & Delikatess AB">Hults Dryck & Delikatess AB</option><option value="Hydmar AB">Hydmar AB</option><option value="Iconic Wines">Iconic Wines</option><option value="Idala Gård Vinhandel AB">Idala Gård Vinhandel AB</option><option value="Il Molino AB">Il Molino AB</option><option value="Imperiebryggeriet  AB">Imperiebryggeriet  AB</option><option value="Import Suede KB">Import Suede KB</option><option value="Interbrands Sweden AB">Interbrands Sweden AB</option><option value="Intermondi AB">Intermondi AB</option><option value="International Food and Wine Sweden AB">International Food and Wine Sweden AB</option><option value="International Food Organisation Sweden AB">International Food Organisation Sweden AB</option><option value="Invini AB">Invini AB</option><option value="Invinitum AB">Invinitum AB</option><option value="Italian Wine in Sweden HB">Italian Wine in Sweden HB</option><option value="Italienska Bolaget i Göteborg AB">Italienska Bolaget i Göteborg AB</option><option value="Italwine AB">Italwine AB</option><option value="ITM-Wine">ITM-Wine</option><option value="iWines AB">iWines AB</option><option value="IWL Sweden AB">IWL Sweden AB</option><option value="J2 Import">J2 Import</option><option value="Jack Barlows Wine AB">Jack Barlows Wine AB</option><option value="Jackdaw Brewery AB">Jackdaw Brewery AB</option><option value="Jädraås Bryggeri AB">Jädraås Bryggeri AB</option><option value="Jädraås Bryggeri HB">Jädraås Bryggeri HB</option><option value="Jädrans i Jädraås">Jädrans i Jädraås</option><option value="Jakobsson och Söderström AB">Jakobsson och Söderström AB</option><option value="Jämtlands Bryggeri AB">Jämtlands Bryggeri AB</option><option value="Jämtlands vingård HB">Jämtlands vingård HB</option><option value="janake wine group AB">janake wine group AB</option><option value="Jemtehed & Brande HB">Jemtehed & Brande HB</option><option value="Jmcave Wine">Jmcave Wine</option><option value="Johan Lidby Vinhandel AB">Johan Lidby Vinhandel AB</option><option value="Jönköpings Bryggeri AB">Jönköpings Bryggeri AB</option><option value="Jörgen Satz AB">Jörgen Satz AB</option><option value="Joyride Wine">Joyride Wine</option><option value="JPC Wines AB">JPC Wines AB</option><option value="JS Vinimport i Uddevalla HB">JS Vinimport i Uddevalla HB</option><option value="Just Brands in Sweden AB">Just Brands in Sweden AB</option><option value="Juvinum Food & Beverage AB">Juvinum Food & Beverage AB</option><option value="Juvinum Vin, Öl & Sprithandel AB">Juvinum Vin, Öl & Sprithandel AB</option><option value="Juvinum Wine, Beer & Spirits AB">Juvinum Wine, Beer & Spirits AB</option><option value="Juvinum, Vin, Öl & Sprithandel AB">Juvinum, Vin, Öl & Sprithandel AB</option><option value="KA Import">KA Import</option><option value="Kabinet Sweden">Kabinet Sweden</option><option value="Kackelstugan AB">Kackelstugan AB</option><option value="Kaffak AB">Kaffak AB</option><option value="Kaj Nilsson">Kaj Nilsson</option><option value="Kajsa Wines AB">Kajsa Wines AB</option><option value="Kallebryggeriet HB">Kallebryggeriet HB</option><option value="Kallenberg Wines AB">Kallenberg Wines AB</option><option value="Kallholmens Maltbryggeri AB">Kallholmens Maltbryggeri AB</option><option value="Kamfra Handelsbolag">Kamfra Handelsbolag</option><option value="Kämpinge Trading AB">Kämpinge Trading AB</option><option value="Kantharos AB">Kantharos AB</option><option value="Karins Vinimport och mer">Karins Vinimport och mer</option><option value="Karl Källander">Karl Källander</option><option value="Kasper Schönhult AB (Charlis Brygghus)">Kasper Schönhult AB (Charlis Brygghus)</option><option value="Katrinelund Partihandel AB">Katrinelund Partihandel AB</option><option value="Katthuset AB">Katthuset AB</option><option value="KB Vin A/S, Danmark, Filial">KB Vin A/S, Danmark, Filial</option><option value="KB Vin AS, Danmark, Filial">KB Vin AS, Danmark, Filial</option><option value="Kemperial Wine Trading AB">Kemperial Wine Trading AB</option><option value="Kenlagu">Kenlagu</option><option value="Kim Wallqvist Vinhandel">Kim Wallqvist Vinhandel</option><option value="Kiviks Musteri AB">Kiviks Musteri AB</option><option value="Kjeffes Bodega AB">Kjeffes Bodega AB</option><option value="Klackabackens bryggeri AB">Klackabackens bryggeri AB</option><option value="Kloss AB">Kloss AB</option><option value="Kloster & Ström Vinhandel">Kloster & Ström Vinhandel</option><option value="Klunk AB">Klunk AB</option><option value="Kock & Co Annonsbyrå AB">Kock & Co Annonsbyrå AB</option><option value="Konstantines & Marija AB">Konstantines & Marija AB</option><option value="Köpingsbergs Gård AB">Köpingsbergs Gård AB</option><option value="Kopparbergs Bryggeri AB">Kopparbergs Bryggeri AB</option><option value="KopparbergsSofiero Bryggeri">KopparbergsSofiero Bryggeri</option><option value="Krates Vin & Delikatesser">Krates Vin & Delikatesser</option><option value="Kristianstads Bryggeri">Kristianstads Bryggeri</option><option value="Krönleins">Krönleins</option><option value="Kullabygdens Destilleri AB">Kullabygdens Destilleri AB</option><option value="Kullabygdens Musteri AB">Kullabygdens Musteri AB</option><option value="Kullahalvöns Vingård AB">Kullahalvöns Vingård AB</option><option value="Kvalitetsviner i Sverige">Kvalitetsviner i Sverige</option><option value="Kvarnagårdens Bryggeri AB">Kvarnagårdens Bryggeri AB</option><option value="Kvintessens Vinagentur i Malmö AB">Kvintessens Vinagentur i Malmö AB</option><option value="L O Smith AB">L O Smith AB</option><option value="L O Smith Production AB">L O Smith Production AB</option><option value="La Bottega delle Sorelle AB">La Bottega delle Sorelle AB</option><option value="Lancel AB">Lancel AB</option><option value="Långviks Krydderi & Handel">Långviks Krydderi & Handel</option><option value="Laoag Handel AB">Laoag Handel AB</option><option value="Lapland Water AB">Lapland Water AB</option><option value="LarCap AB">LarCap AB</option><option value="Larkum HB">Larkum HB</option><option value="LB Vinimport AB">LB Vinimport AB</option><option value="LB Vinimport HB">LB Vinimport HB</option><option value="Lean Marketing and Administration Sweden AB">Lean Marketing and Administration Sweden AB</option><option value="Leea AB">Leea AB</option><option value="Les Millésimes HB">Les Millésimes HB</option><option value="Leufstabruk Bryggeri AB">Leufstabruk Bryggeri AB</option><option value="LEVI Import AB">LEVI Import AB</option><option value="Lilla Ölfabriken AP AB">Lilla Ölfabriken AP AB</option><option value="Limhamns Bryggeri">Limhamns Bryggeri</option><option value="Liquid Services AB">Liquid Services AB</option><option value="Liquorama AB">Liquorama AB</option><option value="Lively Wines Sweden AB">Lively Wines Sweden AB</option><option value="Livijn Wine & Spirits">Livijn Wine & Spirits</option><option value="Ljunggren &  Daughters AB">Ljunggren &  Daughters AB</option><option value="Ljusdals Bryggeri AB">Ljusdals Bryggeri AB</option><option value="Lone Pine Brewery">Lone Pine Brewery</option><option value="Loopen Marin AB">Loopen Marin AB</option><option value="Lovenstad Import">Lovenstad Import</option><option value="Lowther & Lowther AB">Lowther & Lowther AB</option><option value="Lundabryggeriet AB">Lundabryggeriet AB</option><option value="Lustbar Sweden AB">Lustbar Sweden AB</option><option value="Lyberg Grand Wines AB">Lyberg Grand Wines AB</option><option value="Lynx Scandinavia AB">Lynx Scandinavia AB</option><option value="Macken Bryggeri AB">Macken Bryggeri AB</option><option value="Mackmyra Svensk Whisky AB">Mackmyra Svensk Whisky AB</option><option value="Maglehems Musteri AB">Maglehems Musteri AB</option><option value="Magnum Wine AB">Magnum Wine AB</option><option value="Majola Wine and Spirits AB">Majola Wine and Spirits AB</option><option value="Malchamax AB">Malchamax AB</option><option value="Malmköpings Nya Spritbolag AB">Malmköpings Nya Spritbolag AB</option><option value="Malmö Brygghus AB">Malmö Brygghus AB</option><option value="MaltImportören Stockholm HB">MaltImportören Stockholm HB</option><option value="Malundervik AB">Malundervik AB</option><option value="Manzana Form KB">Manzana Form KB</option><option value="Marbäcks öl HB">Marbäcks öl HB</option><option value="Mardell Wine AB">Mardell Wine AB</option><option value="Martin & Servera Aktiebolag">Martin & Servera Aktiebolag</option><option value="Martin Warnbring AB">Martin Warnbring AB</option><option value="Matric Italgross AB">Matric Italgross AB</option><option value="Mats Carlsson Reklambyrå Nordic Wine Company">Mats Carlsson Reklambyrå Nordic Wine Company</option><option value="Mattea Sweden AB">Mattea Sweden AB</option><option value="Mattias Bubbel HB">Mattias Bubbel HB</option><option value="Maxxium Sweden Fine Wine & Spirit AB">Maxxium Sweden Fine Wine & Spirit AB</option><option value="Meadow Valley Wines">Meadow Valley Wines</option><option value="Melchior Group AB">Melchior Group AB</option><option value="Meletis Imports">Meletis Imports</option><option value="Mentem Group Sweden KB">Mentem Group Sweden KB</option><option value="Merchantelle AB">Merchantelle AB</option><option value="Mero Wines AB">Mero Wines AB</option><option value="Metamorfosi AB">Metamorfosi AB</option><option value="Michael Malmbom">Michael Malmbom</option><option value="Migranten">Migranten</option><option value="Miguel Torres">Miguel Torres</option><option value="Mikro Syd AB">Mikro Syd AB</option><option value="Millingstorp Gårdsbryggeri">Millingstorp Gårdsbryggeri</option><option value="MinoanGourmet AB">MinoanGourmet AB</option><option value="Mission Wine & Spirit AB">Mission Wine & Spirit AB</option><option value="Mjödhamnen AB">Mjödhamnen AB</option><option value="Modari Vinimport">Modari Vinimport</option><option value="Modern Wines Sweden AB">Modern Wines Sweden AB</option><option value="Modernist Brewery AB">Modernist Brewery AB</option><option value="Moestue Grape Selections AB">Moestue Grape Selections AB</option><option value="Moët Hennessy Sverige AB">Moët Hennessy Sverige AB</option><option value="Möllberg & Lowther AB">Möllberg & Lowther AB</option><option value="Mondo Wine Sweden AB">Mondo Wine Sweden AB</option><option value="Monte Portcia AB">Monte Portcia AB</option><option value="Mora Bryggeri">Mora Bryggeri</option><option value="Morwine">Morwine</option><option value="Mossagårdens Eko AB">Mossagårdens Eko AB</option><option value="Mossegårdens Vinhus">Mossegårdens Vinhus</option><option value="Motala Brygghus AB">Motala Brygghus AB</option><option value="Mouette Swedish Wine Import">Mouette Swedish Wine Import</option><option value="MPES Vin&Sprit Import">MPES Vin&Sprit Import</option><option value="Mr Integrativ Wines AB">Mr Integrativ Wines AB</option><option value="Multibev AB">Multibev AB</option><option value="Muram International AB">Muram International AB</option><option value="Muris Alagic">Muris Alagic</option><option value="MY-Wine">MY-Wine</option><option value="N Stor Stark AB (publ)">N Stor Stark AB (publ)</option><option value="N57 Nordic AB">N57 Nordic AB</option><option value="Nääs gårdsbryggeri">Nääs gårdsbryggeri</option><option value="Nacka Bryggeri AB">Nacka Bryggeri AB</option><option value="Nakimo AB">Nakimo AB</option><option value="Naramsin Trading">Naramsin Trading</option><option value="Närke Kulturbryggeri AB">Närke Kulturbryggeri AB</option><option value="Nausta Bryggeri AB">Nausta Bryggeri AB</option><option value="NAVI Beer AB">NAVI Beer AB</option><option value="Nebbia HB">Nebbia HB</option><option value="Nelex Beverage AB">Nelex Beverage AB</option><option value="Netterberg & Co AB">Netterberg & Co AB</option><option value="New Brews Sweden AB">New Brews Sweden AB</option><option value="NG & HM Trading AB">NG & HM Trading AB</option><option value="Nice Wine i Jönköping AB">Nice Wine i Jönköping AB</option><option value="Nicisa AB">Nicisa AB</option><option value="Nicolas Georgeon Vin">Nicolas Georgeon Vin</option><option value="Nigab">Nigab</option><option value="Niklas Rydberg med firma Åsundens Bryggeri">Niklas Rydberg med firma Åsundens Bryggeri</option><option value="Nippon Sake Sweden AB">Nippon Sake Sweden AB</option><option value="Niscada International AB">Niscada International AB</option><option value="NJ Consulting & Import">NJ Consulting & Import</option><option value="Nobilus Wines AB">Nobilus Wines AB</option><option value="NollFyraSex AB">NollFyraSex AB</option><option value="Nomax AB">Nomax AB</option><option value="Nora Brygghus AB">Nora Brygghus AB</option><option value="Nordic Beverage Company AB">Nordic Beverage Company AB</option><option value="Nordic Kiwi Brewers AB">Nordic Kiwi Brewers AB</option><option value="Nordic Marketing i Solna AB">Nordic Marketing i Solna AB</option><option value="Nordic Wine Trade AB">Nordic Wine Trade AB</option><option value="Nordic Winehouse AB">Nordic Winehouse AB</option><option value="Nordiska Handelshuset AB">Nordiska Handelshuset AB</option><option value="Nordmarkens Destilleri AB">Nordmarkens Destilleri AB</option><option value="Norén Chartering and Realty AB">Norén Chartering and Realty AB</option><option value="Norrtelje Brenneri AB">Norrtelje Brenneri AB</option><option value="Northgrip HB">Northgrip HB</option><option value="Nouvellewines">Nouvellewines</option><option value="Nova Handel i Göteborg AB">Nova Handel i Göteborg AB</option><option value="Nya Åkesson Vin AB">Nya Åkesson Vin AB</option><option value="Nygrens Hyrservice">Nygrens Hyrservice</option><option value="Nynäshamns Ångbryggeri AB">Nynäshamns Ångbryggeri AB</option><option value="Nystart">Nystart</option><option value="O.Wines and Spirits AB">O.Wines and Spirits AB</option><option value="O/O Brewing AB">O/O Brewing AB</option><option value="Obrini Beverage Company AB">Obrini Beverage Company AB</option><option value="Ocean Brewery AB">Ocean Brewery AB</option><option value="Octa Brew AB">Octa Brew AB</option><option value="Octopus Group Nordic AB">Octopus Group Nordic AB</option><option value="Oenoforos AB">Oenoforos AB</option><option value="Ofwerman Imports">Ofwerman Imports</option><option value="Ofwerman Imports AB">Ofwerman Imports AB</option><option value="OJK Beverage Group AB">OJK Beverage Group AB</option><option value="Olivovin">Olivovin</option><option value="Onsala Hantverkbryggeri">Onsala Hantverkbryggeri</option><option value="Onsala Hantverks Bryggeri">Onsala Hantverks Bryggeri</option><option value="Oppigårds Bryggeri AB">Oppigårds Bryggeri AB</option><option value="Origin Nordic">Origin Nordic</option><option value="Original Brands STHLM HB">Original Brands STHLM HB</option><option value="Origo Wine Import">Origo Wine Import</option><option value="Örjan & Feuer HB">Örjan & Feuer HB</option><option value="Örnsten Handel AB">Örnsten Handel AB</option><option value="Östergyllen Vinmakare AB">Östergyllen Vinmakare AB</option><option value="Osteria Goteborg AB">Osteria Goteborg AB</option><option value="Österlenbryggarna AB">Österlenbryggarna AB</option><option value="Österlenvin HB">Österlenvin HB</option><option value="Östra Sönnarslövs Plantskola AB">Östra Sönnarslövs Plantskola AB</option><option value="Otto Suenson & Co AB">Otto Suenson & Co AB</option><option value="Ottsjö Café AB">Ottsjö Café AB</option><option value="Pamela Lundin">Pamela Lundin</option><option value="PangPang Brewery AB">PangPang Brewery AB</option><option value="Panogruppen AB">Panogruppen AB</option><option value="Parc de Chateau AB">Parc de Chateau AB</option><option value="People Wine AB">People Wine AB</option><option value="Per Knutsson Vistakullefruktodling">Per Knutsson Vistakullefruktodling</option><option value="Percy Månsson Domän Sånana">Percy Månsson Domän Sånana</option><option value="Pernod Ricard Sweden AB">Pernod Ricard Sweden AB</option><option value="Peter Telégins Mat-& Vinhandel AB">Peter Telégins Mat-& Vinhandel AB</option><option value="Phigalia Wine & Food AB">Phigalia Wine & Food AB</option><option value="Phigalia Wine & Food HB">Phigalia Wine & Food HB</option><option value="Philipson Söderberg AB">Philipson Söderberg AB</option><option value="Picky Drinks AB">Picky Drinks AB</option><option value="PietersFinaViner">PietersFinaViner</option><option value="Pikulik, Peter">Pikulik, Peter</option><option value="Pilsnergubbarna AB">Pilsnergubbarna AB</option><option value="Pilsnerimporten Englesson och Axen AB">Pilsnerimporten Englesson och Axen AB</option><option value="Pite Bryggeri AB">Pite Bryggeri AB</option><option value="Pixbo Vin KB">Pixbo Vin KB</option><option value="Plivit Trade AB">Plivit Trade AB</option><option value="Poppelmans Bryggeri AB">Poppelmans Bryggeri AB</option><option value="Poppels Bryggeri AB">Poppels Bryggeri AB</option><option value="Portofoliowines AB">Portofoliowines AB</option><option value="Portucastas AB">Portucastas AB</option><option value="Prästgårdens Vinhandel AB">Prästgårdens Vinhandel AB</option><option value="Premier Taste Sweden AB">Premier Taste Sweden AB</option><option value="Premium Wine of Viken">Premium Wine of Viken</option><option value="Preuss International AB">Preuss International AB</option><option value="Prime Wine Sweden AB">Prime Wine Sweden AB</option><option value="Pro-Matique Products AB">Pro-Matique Products AB</option><option value="Providential Wines & Spirits AB">Providential Wines & Spirits AB</option><option value="Provinum Vinhandel AB">Provinum Vinhandel AB</option><option value="Provotum AB">Provotum AB</option><option value="PWP Import AB">PWP Import AB</option><option value="QESW Swedish AB">QESW Swedish AB</option><option value="Quaffable Wines Sweden AB">Quaffable Wines Sweden AB</option><option value="Quid Vis Vin AB">Quid Vis Vin AB</option><option value="Qvänum Mat & Malt AB">Qvänum Mat & Malt AB</option><option value="Qvarnarps Bryggeri">Qvarnarps Bryggeri</option><option value="R&L Wines AB">R&L Wines AB</option><option value="Råå Bryggeri AB">Råå Bryggeri AB</option><option value="Rådådåd AB">Rådådåd AB</option><option value="Rådanäs Bryggeri AB">Rådanäs Bryggeri AB</option><option value="Rättviks Bryggeri">Rättviks Bryggeri</option><option value="Ravine Wines HB">Ravine Wines HB</option><option value="Realfi Sweden AB">Realfi Sweden AB</option><option value="Reconnaissance Wine AB">Reconnaissance Wine AB</option><option value="Red & White Wine Sweden AB">Red & White Wine Sweden AB</option><option value="Rekupek AB">Rekupek AB</option><option value="Remmarlöv Gårdsbryggeri AB">Remmarlöv Gårdsbryggeri AB</option><option value="Renbjer & Magnusson AB">Renbjer & Magnusson AB</option><option value="Restaurang Skeppsgossen AB">Restaurang Skeppsgossen AB</option><option value="Rewine AB">Rewine AB</option><option value="Ribes Nigrum Vingård AB">Ribes Nigrum Vingård AB</option><option value="Riktig AB">Riktig AB</option><option value="Riktig Cider">Riktig Cider</option><option value="Risotto Fine Foods & Wine">Risotto Fine Foods & Wine</option><option value="Rizowine AB">Rizowine AB</option><option value="Robert Nagy AB">Robert Nagy AB</option><option value="Robert Rask Vinhandel">Robert Rask Vinhandel</option><option value="Rock'n'wines AB">Rock'n'wines AB</option><option value="Rommehed Wine & Spirits AB">Rommehed Wine & Spirits AB</option><option value="Roséspecialisten AB">Roséspecialisten AB</option><option value="Roslagens Brygghus AB">Roslagens Brygghus AB</option><option value="Rossing Vin KB">Rossing Vin KB</option><option value="Rowi Beverage AB">Rowi Beverage AB</option><option value="Rowi Wines AB">Rowi Wines AB</option><option value="Runa Vodka AB">Runa Vodka AB</option><option value="Ruscon & Ruscon HB">Ruscon & Ruscon HB</option><option value="Ryentorps Bryggeri AB">Ryentorps Bryggeri AB</option><option value="SA Wine Import">SA Wine Import</option><option value="SAB Miller Brands Europe AS Tjeckien Filial">SAB Miller Brands Europe AS Tjeckien Filial</option><option value="Sabores AB">Sabores AB</option><option value="Sagoviner Select">Sagoviner Select</option><option value="Sälens Fjällbryggeri AB">Sälens Fjällbryggeri AB</option><option value="Saltå Kvarn AB">Saltå Kvarn AB</option><option value="Salubeido AB">Salubeido AB</option><option value="Samott Konsult">Samott Konsult</option><option value="Samplex AB">Samplex AB</option><option value="Sandahl International AB">Sandahl International AB</option><option value="Sandströms import">Sandströms import</option><option value="Sankta Annas Bränneri AB">Sankta Annas Bränneri AB</option><option value="Santosha AB">Santosha AB</option><option value="Sapordivino AB">Sapordivino AB</option><option value="Sapordivino Sweden AB">Sapordivino Sweden AB</option><option value="Satisfaction4wine Södermanland">Satisfaction4wine Södermanland</option><option value="Saturnus">Saturnus</option><option value="Savino AB">Savino AB</option><option value="ScandinAsia">ScandinAsia</option><option value="Scandinavia Beverage AB">Scandinavia Beverage AB</option><option value="Scandinavia Blueberry Wine AB">Scandinavia Blueberry Wine AB</option><option value="Scandinavia Handel & Rekrytering KB">Scandinavia Handel & Rekrytering KB</option><option value="Scandinavian Hub AB">Scandinavian Hub AB</option><option value="Scandinavian Wine & Food KB">Scandinavian Wine & Food KB</option><option value="Scanwine of Sweden AB">Scanwine of Sweden AB</option><option value="Seaside Tastes HB">Seaside Tastes HB</option><option value="Selection Frederic René AB">Selection Frederic René AB</option><option value="Selezione Barbro Guaccero">Selezione Barbro Guaccero</option><option value="Servaali Sweden AB">Servaali Sweden AB</option><option value="Servicegruppen i Östersund Holding AB">Servicegruppen i Östersund Holding AB</option><option value="Sevengrapes">Sevengrapes</option><option value="Shape Drinks AB">Shape Drinks AB</option><option value="Sharabu AB">Sharabu AB</option><option value="Sheen Group AB">Sheen Group AB</option><option value="Sibbarps Husbryggeri AB">Sibbarps Husbryggeri AB</option><option value="Signo d'Oro AB">Signo d'Oro AB</option><option value="Sigva AB">Sigva AB</option><option value="Sigva Partner AB">Sigva Partner AB</option><option value="Sjölunda Gård Vingrossisten AB">Sjölunda Gård Vingrossisten AB</option><option value="Sjöö Handelshus">Sjöö Handelshus</option><option value="Skandinaviska Dryckeshuset AB">Skandinaviska Dryckeshuset AB</option><option value="Skebo Bruksbryggeri ekonomisk förening">Skebo Bruksbryggeri ekonomisk förening</option><option value="Skelderwikens Brygghus AB">Skelderwikens Brygghus AB</option><option value="Skellefteå Bryggeri AB">Skellefteå Bryggeri AB</option><option value="Skepparps Vingård">Skepparps Vingård</option><option value="Skrubbes Wines AB">Skrubbes Wines AB</option><option value="Smaken av Piemonte">Smaken av Piemonte</option><option value="Smaksinnet AB">Smaksinnet AB</option><option value="Smögen Whisky AB">Smögen Whisky AB</option><option value="Södåkra Vingård HB">Södåkra Vingård HB</option><option value="Södra Maltfabriken AB">Södra Maltfabriken AB</option><option value="Sofrakis Murat">Sofrakis Murat</option><option value="Solkungen AB">Solkungen AB</option><option value="Solsidans Bryggeri AB">Solsidans Bryggeri AB</option><option value="Soltorpet Vinhandel AB">Soltorpet Vinhandel AB</option><option value="Sommage AB">Sommage AB</option><option value="Sophronie AB">Sophronie AB</option><option value="Sörby Vinhandel AB">Sörby Vinhandel AB</option><option value="South Plains Brewing Company">South Plains Brewing Company</option><option value="Southside Brewing Company AB">Southside Brewing Company AB</option><option value="Spansk Vinimport">Spansk Vinimport</option><option value="Speedy Wine Store AB">Speedy Wine Store AB</option><option value="Spendrups Bryggeri AB">Spendrups Bryggeri AB</option><option value="Spirit of Ward AB">Spirit of Ward AB</option><option value="Spiritpartners Nordic AB">Spiritpartners Nordic AB</option><option value="Spruce Up AB">Spruce Up AB</option><option value="Spruce Up HB">Spruce Up HB</option><option value="Staffan Ottosson">Staffan Ottosson</option><option value="Stålhammars drycker AB">Stålhammars drycker AB</option><option value="Star Cigar Stockholm AB">Star Cigar Stockholm AB</option><option value="Starkstrom Wineimport Limited UK">Starkstrom Wineimport Limited UK</option><option value="Stefan Larsson Hotell och Restaurangkonsult AB">Stefan Larsson Hotell och Restaurangkonsult AB</option><option value="Stellan Kramer AB">Stellan Kramer AB</option><option value="Sthlm Brewing Co AB">Sthlm Brewing Co AB</option><option value="Stockeboda AB">Stockeboda AB</option><option value="Stockholm Wine Importers AB">Stockholm Wine Importers AB</option><option value="Stockholm WineLab AB">Stockholm WineLab AB</option><option value="Storia Wine AB">Storia Wine AB</option><option value="Stragas-Gruppen AB">Stragas-Gruppen AB</option><option value="Strandlida Hopspace AB">Strandlida Hopspace AB</option><option value="Stripabryggeriet AB">Stripabryggeriet AB</option><option value="Strömsholms Brygghus">Strömsholms Brygghus</option><option value="Strömsholms brygghus & pub HB">Strömsholms brygghus & pub HB</option><option value="Sture Spirit AB">Sture Spirit AB</option><option value="Sundance Wines AB">Sundance Wines AB</option><option value="Sundbybergs köksbryggeri AB">Sundbybergs köksbryggeri AB</option><option value="Sundell Selections AB">Sundell Selections AB</option><option value="Sunny Stone Sweden AB">Sunny Stone Sweden AB</option><option value="Supreme Wine & Spirit AB">Supreme Wine & Spirit AB</option><option value="Svahn Cru Handelsbolag">Svahn Cru Handelsbolag</option><option value="Svensk Absint AB">Svensk Absint AB</option><option value="Svensk Arrak Import AB">Svensk Arrak Import AB</option><option value="Svensk Bryggeritradition AB">Svensk Bryggeritradition AB</option><option value="Svensk Cater AB">Svensk Cater AB</option><option value="Svensk Champagneimport AB">Svensk Champagneimport AB</option><option value="Svensk Trädgårdsdryck">Svensk Trädgårdsdryck</option><option value="Svensk Vodka i Motala AB">Svensk Vodka i Motala AB</option><option value="Svensk Whiskyförmedling AB">Svensk Whiskyförmedling AB</option><option value="Svenska Eldvatten AB">Svenska Eldvatten AB</option><option value="Svenska Öl & Romkompaniet AB">Svenska Öl & Romkompaniet AB</option><option value="Svenska Vinhuset AB">Svenska Vinhuset AB</option><option value="Svenska Vinkompaniet">Svenska Vinkompaniet</option><option value="Sverige Vinoliv">Sverige Vinoliv</option><option value="Swasso Swedish Wine Association">Swasso Swedish Wine Association</option><option value="SweComp Sweden Components AB">SweComp Sweden Components AB</option><option value="Sweden Spirit Group AB">Sweden Spirit Group AB</option><option value="Swedencanary filial till Swecan Ltd">Swedencanary filial till Swecan Ltd</option><option value="Swedish Brand AB">Swedish Brand AB</option><option value="Swedish Lapland Breweries AB">Swedish Lapland Breweries AB</option><option value="Swedish Lapland production AB">Swedish Lapland production AB</option><option value="Swedish Wine Cellar AB">Swedish Wine Cellar AB</option><option value="Swift Trust AB">Swift Trust AB</option><option value="SWSwine Köksinredarna Björkman Design AB">SWSwine Köksinredarna Björkman Design AB</option><option value="Sybaris - Wine & Spirits AB">Sybaris - Wine & Spirits AB</option><option value="Sydamerikaviner AB">Sydamerikaviner AB</option><option value="Sydamerikaviner HB">Sydamerikaviner HB</option><option value="Sydsluttning HB">Sydsluttning HB</option><option value="Symposion International AB">Symposion International AB</option><option value="Tanum-Eger Import HB">Tanum-Eger Import HB</option><option value="Taste42 Sweden AB">Taste42 Sweden AB</option><option value="Tastebusters">Tastebusters</option><option value="Terrific Wines AB">Terrific Wines AB</option><option value="Tevsjö Destilleri i Järvsö AB">Tevsjö Destilleri i Järvsö AB</option><option value="Texas Smoke House S M M AB">Texas Smoke House S M M AB</option><option value="The Beer Factory Leksand AB">The Beer Factory Leksand AB</option><option value="The Five Finest">The Five Finest</option><option value="The green Wave">The green Wave</option><option value="The Nils Oscar Company AB">The Nils Oscar Company AB</option><option value="The Saddle and Sabre Mash House AB">The Saddle and Sabre Mash House AB</option><option value="The Swedish Brewing Company AB">The Swedish Brewing Company AB</option><option value="The Wine Company Danmark Filial">The Wine Company Danmark Filial</option><option value="The Wine Team">The Wine Team</option><option value="The Wine Team Juncta valenta AB">The Wine Team Juncta valenta AB</option><option value="The WineAgency Sweden AB">The WineAgency Sweden AB</option><option value="Theisvine AB">Theisvine AB</option><option value="Thorslundkagge AB">Thorslundkagge AB</option><option value="Three Bears Collection AB">Three Bears Collection AB</option><option value="Tina Wine Corporation">Tina Wine Corporation</option><option value="Tingvalla Hantverks AB">Tingvalla Hantverks AB</option><option value="TIWA AB">TIWA AB</option><option value="Tjers Bryggeri AB">Tjers Bryggeri AB</option><option value="TM Franska Kvalitetsviner AB">TM Franska Kvalitetsviner AB</option><option value="TM Kvalitetsviner AB">TM Kvalitetsviner AB</option><option value="TM Wine Trading AB">TM Wine Trading AB</option><option value="Toivio Innovation AB">Toivio Innovation AB</option><option value="Tomayan Trading AB">Tomayan Trading AB</option><option value="Tommy Ek">Tommy Ek</option><option value="Tommy Lind Franska Kvalitetsviner">Tommy Lind Franska Kvalitetsviner</option><option value="TOMP Beer Wine & Spirits AB">TOMP Beer Wine & Spirits AB</option><option value="Trädskogens Bryggeri AB">Trädskogens Bryggeri AB</option><option value="Train Station Brewery AB">Train Station Brewery AB</option><option value="Träkumla Rom AB">Träkumla Rom AB</option><option value="Tranaholms Musteri HB">Tranaholms Musteri HB</option><option value="Trans Nordic Selections AB">Trans Nordic Selections AB</option><option value="Tre Svampar Import Export">Tre Svampar Import Export</option><option value="Treasury Wine Estates Sweden AB">Treasury Wine Estates Sweden AB</option><option value="Triggollo Wine & Spirits AB">Triggollo Wine & Spirits AB</option><option value="Triplus Vinhandel AB">Triplus Vinhandel AB</option><option value="Trosa Vingård AB">Trosa Vingård AB</option><option value="Truly Indian Restaurants AB">Truly Indian Restaurants AB</option><option value="Tryffelsvinet AB">Tryffelsvinet AB</option><option value="Tujon HB">Tujon HB</option><option value="Tumi AB">Tumi AB</option><option value="Två Feta Grisar Ekonomisk förening">Två Feta Grisar Ekonomisk förening</option><option value="Tvin AB">Tvin AB</option><option value="TWC Dryckesutbildning">TWC Dryckesutbildning</option><option value="U and Me Beer AB">U and Me Beer AB</option><option value="Unibärsum AB">Unibärsum AB</option><option value="United Wineries Sweden AB">United Wineries Sweden AB</option><option value="UniTrends AB">UniTrends AB</option><option value="V&S Group">V&S Group</option><option value="Våga Vara Sur AB">Våga Vara Sur AB</option><option value="Väla Vin">Väla Vin</option><option value="Valhalla Vin & Öl AB">Valhalla Vin & Öl AB</option><option value="Valid Wines Sweden AB">Valid Wines Sweden AB</option><option value="Valkyria Distillery AB">Valkyria Distillery AB</option><option value="Valora Trade Sweden AB">Valora Trade Sweden AB</option><option value="Vänersborgs Vinagentur HB">Vänersborgs Vinagentur HB</option><option value="Varbergs Vingrossist AB">Varbergs Vingrossist AB</option><option value="Värmdö Bränneri AB">Värmdö Bränneri AB</option><option value="Värmdö Bryggeri AB">Värmdö Bryggeri AB</option><option value="Värmdö Musteri AB">Värmdö Musteri AB</option><option value="Värmlands Brygghus AB">Värmlands Brygghus AB</option><option value="Vasagatan 50 Restaurang AB">Vasagatan 50 Restaurang AB</option><option value="Västergården Bryggeri AB">Västergården Bryggeri AB</option><option value="Västra Ämterviks Bryggeri AB">Västra Ämterviks Bryggeri AB</option><option value="VCT Sweden AB">VCT Sweden AB</option><option value="Vega Bryggeri AB">Vega Bryggeri AB</option><option value="VelvetBox AB">VelvetBox AB</option><option value="Vendemmia Vinimport AB">Vendemmia Vinimport AB</option><option value="Vhas AB">Vhas AB</option><option value="Videhult & Medici Vinimport AB">Videhult & Medici Vinimport AB</option><option value="Villa Aurum AB">Villa Aurum AB</option><option value="Villa Caplet Scandinavia AB">Villa Caplet Scandinavia AB</option><option value="Villa Caplet Scandinavia HB">Villa Caplet Scandinavia HB</option><option value="Vin & Natur Malmö AB">Vin & Natur Malmö AB</option><option value="Vin 1 Sweden AB">Vin 1 Sweden AB</option><option value="Vin Champagne Produits de France AB">Vin Champagne Produits de France AB</option><option value="Vin Drumlin AB">Vin Drumlin AB</option><option value="Vin Selekt i Stockholm AB">Vin Selekt i Stockholm AB</option><option value="Vina Castella HB">Vina Castella HB</option><option value="Viña Española AB">Viña Española AB</option><option value="Vinagenturen Lagerdahl">Vinagenturen Lagerdahl</option><option value="Vinalliansen Grossist i Stockholm AB">Vinalliansen Grossist i Stockholm AB</option><option value="Vinalliansen Legal Vintage Sweden AB">Vinalliansen Legal Vintage Sweden AB</option><option value="Vincello Sweden">Vincello Sweden</option><option value="Vincompagni1">Vincompagni1</option><option value="Vinentor">Vinentor</option><option value="Viness AB">Viness AB</option><option value="Vinette Vinagentur">Vinette Vinagentur</option><option value="Vinetum AB">Vinetum AB</option><option value="Vinfabriken Sverige AB">Vinfabriken Sverige AB</option><option value="Vingaraget AB">Vingaraget AB</option><option value="Vingården Bacina AB">Vingården Bacina AB</option><option value="Vingården i Åhus">Vingården i Åhus</option><option value="Vingourmet Sweden AB">Vingourmet Sweden AB</option><option value="Vinhuset Ekström & Aveskogh HB">Vinhuset Ekström & Aveskogh HB</option><option value="Vini - Amalfi">Vini - Amalfi</option><option value="Vinia Sweden AB">Vinia Sweden AB</option><option value="Viniberum">Viniberum</option><option value="Vinik">Vinik</option><option value="Vininor AB">Vininor AB</option><option value="Vinitor AB">Vinitor AB</option><option value="Vinkällaren Grappes Vinimport AB">Vinkällaren Grappes Vinimport AB</option><option value="Vinkompaniet ML">Vinkompaniet ML</option><option value="Vinlusen AB">Vinlusen AB</option><option value="Vino Conoscenza AB">Vino Conoscenza AB</option><option value="Vino Grosso">Vino Grosso</option><option value="Vino Ottimo">Vino Ottimo</option><option value="Vinobele AB">Vinobele AB</option><option value="Vinobirra HB">Vinobirra HB</option><option value="VinochKanin HB">VinochKanin HB</option><option value="Vinolentus AB">Vinolentus AB</option><option value="VinoLin">VinoLin</option><option value="Vinoliv Import AB">Vinoliv Import AB</option><option value="Vinolive HB">Vinolive HB</option><option value="Vinomatik 2005">Vinomatik 2005</option><option value="Vinomeglio HB">Vinomeglio HB</option><option value="Vinopia Wine & Spirit AB">Vinopia Wine & Spirit AB</option><option value="VinoScelto Bestcellar Import">VinoScelto Bestcellar Import</option><option value="Vinovativa AB">Vinovativa AB</option><option value="Vinovino AB">Vinovino AB</option><option value="Vinovum AB">Vinovum AB</option><option value="Vinovum Sverige AB">Vinovum Sverige AB</option><option value="Vinson AB">Vinson AB</option><option value="Vinstaden AB">Vinstaden AB</option><option value="Vinstolen AB">Vinstolen AB</option><option value="Vinsummum AB">Vinsummum AB</option><option value="Vintapp HB">Vintapp HB</option><option value="Vinteko AB">Vinteko AB</option><option value="VinTillMat i Väst Handelsbolag">VinTillMat i Väst Handelsbolag</option><option value="Vintrio Wine AB">Vintrio Wine AB</option><option value="Vinum HB">Vinum HB</option><option value="Vinum Veritas Wine Agency AB">Vinum Veritas Wine Agency AB</option><option value="Vinumlux">Vinumlux</option><option value="Vinunic AB">Vinunic AB</option><option value="Vinupplevelser i Sverige AB">Vinupplevelser i Sverige AB</option><option value="Vinuversum">Vinuversum</option><option value="Virtuous Spirits AB">Virtuous Spirits AB</option><option value="Viva Wine och Spirits AB">Viva Wine och Spirits AB</option><option value="Vivona AB">Vivona AB</option><option value="Volaturus AB">Volaturus AB</option><option value="W&B of Sweden AB">W&B of Sweden AB</option><option value="Wahlbergs Drycker AB">Wahlbergs Drycker AB</option><option value="Walhöll Brygghus">Walhöll Brygghus</option><option value="Wallin Vinimport">Wallin Vinimport</option><option value="Wallskogs Wanted Wines">Wallskogs Wanted Wines</option><option value="Wannborga på Öland AB">Wannborga på Öland AB</option><option value="Ward Wines AB">Ward Wines AB</option><option value="Warehouse 595 HB">Warehouse 595 HB</option><option value="Waxholms Bryggeri AB">Waxholms Bryggeri AB</option><option value="Weapsy">Weapsy</option><option value="Wennerberg Dryckes AB">Wennerberg Dryckes AB</option><option value="West Coast Bryggeri AB">West Coast Bryggeri AB</option><option value="Wester Wine & Food AB">Wester Wine & Food AB</option><option value="Westerbottens Bryggeri AB">Westerbottens Bryggeri AB</option><option value="Westling Oldfeldt Brands AB">Westling Oldfeldt Brands AB</option><option value="Whisky4U Scandinavia AB">Whisky4U Scandinavia AB</option><option value="Whiskyforum Sverige AB">Whiskyforum Sverige AB</option><option value="Whiskytaste Sweden AB">Whiskytaste Sweden AB</option><option value="Winberg & Partner AB">Winberg & Partner AB</option><option value="Wine & Beverage Center">Wine & Beverage Center</option><option value="Wine Brothers & Co">Wine Brothers & Co</option><option value="Wine for Sweden">Wine for Sweden</option><option value="Wine Group Sweden AB">Wine Group Sweden AB</option><option value="Wine List Sweden AB">Wine List Sweden AB</option><option value="Wine Lounge Stockholm AB">Wine Lounge Stockholm AB</option><option value="Wine Selection, Amongré AB">Wine Selection, Amongré AB</option><option value="Wine Stories Sweden AB">Wine Stories Sweden AB</option><option value="Wine Trade Sweden AB">Wine Trade Sweden AB</option><option value="Winebee AB">Winebee AB</option><option value="Winehouse Bilberg">Winehouse Bilberg</option><option value="Winemarket Nordic AB">Winemarket Nordic AB</option><option value="Winepartners Nordic AB">Winepartners Nordic AB</option><option value="Wines and more Scandinavia AB">Wines and more Scandinavia AB</option><option value="Winespotting AB">Winespotting AB</option><option value="Winevillage AB">Winevillage AB</option><option value="WineWorks AB">WineWorks AB</option><option value="WineWorld AB">WineWorld AB</option><option value="Wingardium AB">Wingardium AB</option><option value="Wish-IT AB">Wish-IT AB</option><option value="World Beer Trading KB">World Beer Trading KB</option><option value="WSB The Beverage Company AB">WSB The Beverage Company AB</option><option value="XO Sweden Wines & Spirits AB">XO Sweden Wines & Spirits AB</option><option value="Your Wineclub Sweden AB">Your Wineclub Sweden AB</option><option value="Ysäter AB">Ysäter AB</option><option value="Zawaza AB">Zawaza AB</option><option value="Zebrawine i Uppsala AB">Zebrawine i Uppsala AB</option><option value="Zenex AB">Zenex AB</option><option value="ZNAPS Sweden AB">ZNAPS Sweden AB</option><option value="Zonum AB">Zonum AB</option>						</select></p>
+                                </li>
+                                <li>
+                                    <p>PRIS</p>
+                                    <p><select class="input-white sok-select sok-select-pris input-w100p filter-input" name="pris">
+                                        <option value="">Välj pris</option>
+                                        <option value="1" >0 - 50 kr</option>
+                                        <option value="2" >51 - 79 kr</option>
+                                        <option value="3" >80 - 99 kr</option>
+                                        <option value="4" >100 - 129 kr</option>
+                                        <option value="5" >130 - 159 kr</option>
+                                        <option value="6" >160 - 200 kr</option>
+                                        <option value="7" >201 - 300 kr</option>
+                                        <option value="8" >300+ kr</option>
+                                    </select></p>
+                                </li>
+                                <li>
+                                    <p>ÖVRIGT</p>
+                                    <p><select class="input-white sok-select sok-select-omdome input-w100p filter-input" name="ovrigt">
+                                        <option value="">Välj övrigt</option>
+                                        <option value="1" >Ekologisk</option>
+                                    </select></p>
+                                    <div class="clear">	</div>
+                                </li>
+                            </ul>
+
+                            <div class="clear">	</div>
+
+                            <input type="submit" value="Uppdatera" class="submit-white filter-update-button" />
+                            <input type="button" id="reset" value="Rensa filtering" class="submit-white filter-reset-button" />
+                            <div class="clear"></div>
+                            <script type="text/javascript">
+                                //Rensa filtrering
+                                $("#filtrera-sokning #reset").click(function(e) {
+                                    $(".filter-input").val("");
+                                    e.preventDefault();
+                                });
+                            </script>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.filter-show').toggle(function() {
+                    $('.filter-holder').show("slow");
+                }, function() {
+                    $('.filter-holder').hide("slow");
+                });
+            });
+        </script></div><div id="main">
+    <div class="box-wrapper">
+        <div class="box-content">
+            <div class="box-title"><h2>Amaretto Sour</h2></div>
+
+            <div class="drink-show-wrap">
+
+                <div class="drink-image"><img src="https://www.vinguiden.com/wp-content/uploads/2016/03/Amaretto-sour-350-500.jpg" alt="" border="0" /></div>
+
+                <div class="drink-content">
+
+                    <p><strong>Amaretto Sour är en riktigt klassisk cocktail. Gemene man känner inte till att &#8221;originalversionen&#8221; kräver en rå äggvita, men har du en gång smakat äggviteversionen kommer du aldrig vilja ha något annat! </strong> </p>
+                    <p><strong>Ingredienser:</strong><br />
+                        5 cl Amaretto<br />
+                        3 cl citronjuice<br />
+                        2 cl sockerlag<br />
+                        1 cl äggvita</p>
+                    <p><strong>How to make it:</strong><br />
+                        1. Häll samtliga ingredienser i en shaker.<br />
+                        2. Torrskaka sedan hårt i cirka 10 sek.<br />
+                        3. Skaka därefter med is i cirka 10 sek.<br />
+                        4. Sila upp i ett glas fyllt med is.<br />
+                        5. Enjoy!</p>
+
+                    <div class="video-container">
+                        <iframe class="youtube-player" type="text/html" id="frame" src="//www.youtube.com/embed/eEDnUCJKyD8?autohide=1&amp;fs=1&amp;rel=0&amp;enablejsapi=1&amp;showinfo=0&amp;hd=1" width="769" height="430" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+                    </div>
+
+                    <div class="drink-links-holder">
+
+                        <form method="post" name="addfav">
+                            <input type="hidden" name="favdrinkid" value="67478" />
+                            <p><a href="javascript:document.addfav.submit();" style="color: #ef7d81;font-weight: bold;">Lägg till drinken som favorit »</a></p>
+                        </form>
+
+                        <div class="drink-social-holder">
+                            <ul class="social-ul">
+                                <li>
+                                    <a href="https://www.facebook.com/dialog/feed?app_id=134372693367240&display=popup&link=https://www.vinguiden.com/cocktailguiden/drinkar/67478/&name=Amaretto Sour&caption=Cocktailguiden.com&redirect_uri=https://www.vinguiden.com/cocktailguiden/drinkar/67478/" target="_blank">
+                                        <img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-facebook.png" alt="" border="0" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/share?url=https://www.vinguiden.com/cocktailguiden/drinkar/67478/&counturl=https://www.vinguiden.com/cocktailguiden/drinkar/67478/&hashtags=Cocktailguiden.com" target="_blank">
+                                        <img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-twitter.png" alt="" border="0" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="//pinterest.com/pin/create/link/?url=https://www.vinguiden.com/cocktailguiden/drinkar/67478/&description=Amaretto Sour" target="_blank">
+                                        <img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-pinterest.png" alt="" border="0" />
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="clear"></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="clear">	</div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="box-wrapper">
+        <div class="box-content">
+            <div class="box-title"><h2>Senaste drinkarna</h2></div>
+
+            <ul class="drink-grid-wrap-ul flex">
+
+                <li class="drink-grid-wrap-li flex-li">
+                    <div class="drink-grid-wrap">
+
+
+                        <div style="float: right; max-width: 100px;width: 100%; text-align: center; max-height: 135px;margin-bottom: 10px;"><a href="//www.vinguiden.com/cocktailguiden/drinkar/mojito/"><img src="https://www.vinguiden.com/wp-content/uploads/2016/04/Mojito-drinkbild-350-500.jpg" alt="" style="max-height: 135px;" /></a></div>
+
+                        <div style="padding-right: 110px;">
+
+                            <ul class="drink-grid-title-ul">
+                                <li class="drink-grid-title"><a href="//www.vinguiden.com/cocktailguiden/drinkar/mojito/" title="Mojito">Mojito</a></li>
+                                <li>
+                                    Lime<br />mynta<br />Rom<br
+                                </li>
+                            </ul>
+
+
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="clear"></div>
+
+                    </div>
+
+                    <div class="drink-grid-icons">
+                        <div class="drink-grid-icon-holder">
+                            <a href="http://www.facebook.com/sharer.php?u=//www.vinguiden.com/cocktailguiden/drinkar/mojito/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-facebook.png" alt="Facebook" /></a>
+                            <a href="http://twitter.com/home?status=//www.vinguiden.com/cocktailguiden/drinkar/mojito/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-twitter.png" alt="Twitter" /></a>
+                        </div>
+                        <div class="button-red" onclick="location.href='//www.vinguiden.com/cocktailguiden/drinkar/mojito/'">Läs Mer</div>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li class="drink-grid-wrap-li flex-li">
+                    <div class="drink-grid-wrap">
+
+
+                        <div style="float: right; max-width: 100px;width: 100%; text-align: center; max-height: 135px;margin-bottom: 10px;"><a href="//www.vinguiden.com/cocktailguiden/drinkar/sloe-down/"><img src="https://www.vinguiden.com/wp-content/uploads/2016/04/Sloe-Down-350-500.jpg" alt="" style="max-height: 135px;" /></a></div>
+
+                        <div style="padding-right: 110px;">
+
+                            <ul class="drink-grid-title-ul">
+                                <li class="drink-grid-title"><a href="//www.vinguiden.com/cocktailguiden/drinkar/sloe-down/" title="Sloe Down">Sloe Down</a></li>
+                                <li>
+                                    Campari<br />Gin<br />vermouth<br
+                                </li>
+                            </ul>
+
+
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="clear"></div>
+
+                    </div>
+
+                    <div class="drink-grid-icons">
+                        <div class="drink-grid-icon-holder">
+                            <a href="http://www.facebook.com/sharer.php?u=//www.vinguiden.com/cocktailguiden/drinkar/sloe-down/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-facebook.png" alt="Facebook" /></a>
+                            <a href="http://twitter.com/home?status=//www.vinguiden.com/cocktailguiden/drinkar/sloe-down/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-twitter.png" alt="Twitter" /></a>
+                        </div>
+                        <div class="button-red" onclick="location.href='//www.vinguiden.com/cocktailguiden/drinkar/sloe-down/'">Läs Mer</div>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li class="drink-grid-wrap-li flex-li">
+                    <div class="drink-grid-wrap">
+
+
+                        <div style="float: right; max-width: 100px;width: 100%; text-align: center; max-height: 135px;margin-bottom: 10px;"><a href="//www.vinguiden.com/cocktailguiden/drinkar/oh-nut-again/"><img src="https://www.vinguiden.com/wp-content/uploads/2016/03/Oh-nut-again-350-500.jpg" alt="" style="max-height: 135px;" /></a></div>
+
+                        <div style="padding-right: 110px;">
+
+                            <ul class="drink-grid-title-ul">
+                                <li class="drink-grid-title"><a href="//www.vinguiden.com/cocktailguiden/drinkar/oh-nut-again/" title="Oh Nut Again!">Oh Nut Again!</a></li>
+                                <li>
+                                    Whisky<br />kaffe<br />Mjölk<br
+                                </li>
+                            </ul>
+
+
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="clear"></div>
+
+                    </div>
+
+                    <div class="drink-grid-icons">
+                        <div class="drink-grid-icon-holder">
+                            <a href="http://www.facebook.com/sharer.php?u=//www.vinguiden.com/cocktailguiden/drinkar/oh-nut-again/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-facebook.png" alt="Facebook" /></a>
+                            <a href="http://twitter.com/home?status=//www.vinguiden.com/cocktailguiden/drinkar/oh-nut-again/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-twitter.png" alt="Twitter" /></a>
+                        </div>
+                        <div class="button-red" onclick="location.href='//www.vinguiden.com/cocktailguiden/drinkar/oh-nut-again/'">Läs Mer</div>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li class="drink-grid-wrap-li flex-li">
+                    <div class="drink-grid-wrap">
+
+
+                        <div style="float: right; max-width: 100px;width: 100%; text-align: center; max-height: 135px;margin-bottom: 10px;"><a href="//www.vinguiden.com/cocktailguiden/drinkar/amaretto-sour-2/"><img src="https://www.vinguiden.com/wp-content/uploads/2016/03/Amaretto-sour-350-500.jpg" alt="" style="max-height: 135px;" /></a></div>
+
+                        <div style="padding-right: 110px;">
+
+                            <ul class="drink-grid-title-ul">
+                                <li class="drink-grid-title"><a href="//www.vinguiden.com/cocktailguiden/drinkar/amaretto-sour-2/" title="Amaretto Sour">Amaretto Sour</a></li>
+                                <li>
+                                    äggvita<br />citronjuice<br />sockerlag<br
+                                </li>
+                            </ul>
+
+
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="clear"></div>
+
+                    </div>
+
+                    <div class="drink-grid-icons">
+                        <div class="drink-grid-icon-holder">
+                            <a href="http://www.facebook.com/sharer.php?u=//www.vinguiden.com/cocktailguiden/drinkar/amaretto-sour-2/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-facebook.png" alt="Facebook" /></a>
+                            <a href="http://twitter.com/home?status=//www.vinguiden.com/cocktailguiden/drinkar/amaretto-sour-2/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-twitter.png" alt="Twitter" /></a>
+                        </div>
+                        <div class="button-red" onclick="location.href='//www.vinguiden.com/cocktailguiden/drinkar/amaretto-sour-2/'">Läs Mer</div>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li class="drink-grid-wrap-li flex-li">
+                    <div class="drink-grid-wrap">
+
+
+                        <div style="float: right; max-width: 100px;width: 100%; text-align: center; max-height: 135px;margin-bottom: 10px;"><a href="//www.vinguiden.com/cocktailguiden/drinkar/mr-patrick/"><img src="https://www.vinguiden.com/wp-content/uploads/2016/03/St-Patrick-350-500.jpg" alt="" style="max-height: 135px;" /></a></div>
+
+                        <div style="padding-right: 110px;">
+
+                            <ul class="drink-grid-title-ul">
+                                <li class="drink-grid-title"><a href="//www.vinguiden.com/cocktailguiden/drinkar/mr-patrick/" title="Mr. Patrick">Mr. Patrick</a></li>
+                                <li>
+                                    Stout<br />lime<br />Cocktails<br
+                                </li>
+                            </ul>
+
+
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="clear"></div>
+
+                    </div>
+
+                    <div class="drink-grid-icons">
+                        <div class="drink-grid-icon-holder">
+                            <a href="http://www.facebook.com/sharer.php?u=//www.vinguiden.com/cocktailguiden/drinkar/mr-patrick/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-facebook.png" alt="Facebook" /></a>
+                            <a href="http://twitter.com/home?status=//www.vinguiden.com/cocktailguiden/drinkar/mr-patrick/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-twitter.png" alt="Twitter" /></a>
+                        </div>
+                        <div class="button-red" onclick="location.href='//www.vinguiden.com/cocktailguiden/drinkar/mr-patrick/'">Läs Mer</div>
+                        <div class="clear"></div>
+                    </div>
+                </li>
+                <li class="drink-grid-wrap-li flex-li">
+                    <div class="drink-grid-wrap">
+
+
+                        <div style="float: right; max-width: 100px;width: 100%; text-align: center; max-height: 135px;margin-bottom: 10px;"><a href="//www.vinguiden.com/cocktailguiden/drinkar/irish-coffee-2/"><img src="https://www.vinguiden.com/wp-content/uploads/2016/03/Irish-glas-350-500.jpg" alt="" style="max-height: 135px;" /></a></div>
+
+                        <div style="padding-right: 110px;">
+
+                            <ul class="drink-grid-title-ul">
+                                <li class="drink-grid-title"><a href="//www.vinguiden.com/cocktailguiden/drinkar/irish-coffee-2/" title="Irish Coffee">Irish Coffee</a></li>
+                                <li>
+                                    Farinsocker<br />grädde<br />kaffe<br
+                                </li>
+                            </ul>
+
+
+                            <div class="clear"></div>
+                        </div>
+
+                        <div class="clear"></div>
+
+                    </div>
+
+                    <div class="drink-grid-icons">
+                        <div class="drink-grid-icon-holder">
+                            <a href="http://www.facebook.com/sharer.php?u=//www.vinguiden.com/cocktailguiden/drinkar/irish-coffee-2/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-facebook.png" alt="Facebook" /></a>
+                            <a href="http://twitter.com/home?status=//www.vinguiden.com/cocktailguiden/drinkar/irish-coffee-2/"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-twitter.png" alt="Twitter" /></a>
+                        </div>
+                        <div class="button-red" onclick="location.href='//www.vinguiden.com/cocktailguiden/drinkar/irish-coffee-2/'">Läs Mer</div>
+                        <div class="clear"></div>
+                    </div>
+                </li>		</ul>
+
+            <div class="clear"></div>
+
+        </div>
+    </div><div id="footer">
+
+    <ul class="footer-links">
+        <li>
+            <div>
+                <h3>Genvägar</h3>
+                <ul>
+                    <li><a href="https://www.vinguiden.com/cocktailguiden/varukorg/">Varukorg</a></li>
+                    <li><a href="https://www.vinguiden.com/cocktailguiden/nyhetsbrev/">Nyhetsbrev</a></li>
+                    <li id="register-button-footer"><a href="#">Bli medlem</a></li><li><a href="https://www.vinguiden.com/cocktailguiden/min-orderhistorik/">Min orderhistorik</a></li>
+                    <li><a href="https://www.vinguiden.com/cocktailguiden/vanliga-fragor-svar/">Så här beställer du via Cocktailguiden.com</a></li>
+                    <li><a href="https://www.vinguiden.com/cocktailguiden/kontakt/">Kontakt</a></li>
+                    <li><a href="https://www.vinguiden.com/cocktailguiden/om-oss/">Om Cocktailguiden.com</a></li>
+                    <li><a href="https://www.vinguiden.com/cocktailguiden/villkor/">Allmänna villkor & PU</a></li>
+                    <li><a href="//www.riksdagen.se/sv/Dokument-Lagar/Lagar/Svenskforfattningssamling/Alkohollag-20101622_sfs-2010-1622/#K5" target="_blank">Alkohollagen</a></li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div>
+                <h3>Media</h3>
+                <ul>
+                    <li><a href="//www.facebook.com/pages/Cocktailguidencom/464628393593414?fref=ts" target="_blank">Facebook</a></li>
+                    <li><a href="//instagram.com/cocktailguiden/" target="_blank">Instagram</a></li>
+                    <li><a href="//www.vinguiden.com/vgmag/" target="_blank">VGMAG</a></li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div>
+                <h3>Vår sajtfamilj</h3>
+                <ul>
+                    <li><a href="//www.vinguiden.com/cocktailguiden/">Cocktailguiden.com</a></li>
+                    <li><a href="//www.vinguiden.com/dessertguiden/">Dessertguiden.com</a></li>
+                    <li><a href="//www.vinguiden.com/matguiden/">Matguiden.com</a></li>
+                    <li><a href="//www.vinguiden.com">Vinguiden.com</a></li>
+                    <li><a href="//www.vinguiden.com/whiskyguiden/">Whiskyguiden.com</a></li>
+                    <li><a href="//www.vinguiden.com/olguiden/">Ölguiden.com</a></li>
+                </ul>
+            </div>
+        </li>
+        <li>
+            <div>
+                <h3>Missa inget!</h3>
+                Anmäl dig för vårt nyhetsbrev.
+
+                <form method="post" class="optInForm">
+
+                    <ul class="forms-standard-ul">
+                        <li class="input-label">Namn</li>
+                        <li style="padding-bottom: 10px !important;"><input type="text" class="input-white input-w100p optInFormName" name="nyhetsnamn" /></li>
+                        <li class="input-label">E-postadress</li>
+                        <li style="padding-bottom: 10px !important;"><input type="text" class="input-white input-w100p optInFormEmail" name="nyhetsepost" /></li>
+                    </ul>
+
+                    <input type="hidden" class="optInFormRefsite" name="refsite" value="cocktailguiden" />
+                    <input type="hidden" class="optInFormRefplace" name="refplace" value="/cocktailguiden/drinkar/amaretto-sour-2/#footer" />
+                    <input type="hidden" class="showNewSubscriber" value="1" />
+
+                    <input type="submit" class="button-standard input-w100p" value="Skicka" />
+
+                </form>
+            </div>
+        </li>
+    </ul>
+
+    <div class="clear"></div>
+
+    <div id="social-icon-box">
+        <ul>
+            <li><a href="//www.facebook.com/pages/Cocktailguidencom/464628393593414?fref=ts" target="_blank"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-footer-facebook.png" alt="" border="0" /></a></li>
+            <li><a href="//instagram.com/cocktailguiden/" target="_blank"><img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/icon-footer-instagram.png" alt="" border="0" /></a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+
+    <div class="footer-text">
+        Copyright © Vin & Cocktailguiden i Sverige AB | Norrtullsgatan 57, 113 45 Stockholm | www.cocktailguiden.com | info@cocktailguiden.com <br />
+        <img src="http://www.vinguiden.com/cocktailguiden/wp-content/themes/cocktailguiden/images/sitefamily-logo-outline.png" alt="" style="margin-top: 30px;height: 26px;" border="0" />
+    </div>
+
+</div>
+
+</div>
+</body>
+</html>
