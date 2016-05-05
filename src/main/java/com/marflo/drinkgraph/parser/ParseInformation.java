@@ -6,6 +6,7 @@ import org.jsoup.nodes.Document;
 import org.neo4j.driver.v1.*;
 
 import java.io.IOException;
+import java.net.SocketTimeoutException;
 import java.util.*;
 
 public class ParseInformation {
@@ -19,7 +20,7 @@ public class ParseInformation {
         int invalidDrinksCounter = 0;
         int validDrinksCounter = 0;
 
-        for (int pageNumber = 1; pageNumber < 2; pageNumber++) {
+        for (int pageNumber = 1; pageNumber < 20; pageNumber++) {
             String input = "https://www.vinguiden.com/cocktailguiden/drinkar/?sida=" + pageNumber;
             Document mainDoc = Jsoup.connect(input).get();
             drinkUrls.putAll(pageParserHelper.parseMainPage(mainDoc));
@@ -27,22 +28,25 @@ public class ParseInformation {
         System.out.println("number of drinks: " + drinkUrls.size());
 
         for (Map.Entry<String, String> drink : drinkUrls.entrySet()) {
-            List<IngredientEntity> ingredientsForDrink = new ArrayList<>();
             System.out.println(drink.getKey() + " : " + drink.getValue());
             String drinkInput = "https:" + drink.getValue();
-            Document drinkDoc = Jsoup.connect(drinkInput).get();
-            ingredientsForDrink = pageParserHelper.parseDrinkPage(drinkDoc);
-            System.out.println("drink: " + drink.getKey());
-            if (ingredientsForDrink != null) {
-                System.out.println("number of ingredients: " + ingredientsForDrink.size());
+            try {
+                Document drinkDoc = Jsoup.connect(drinkInput).get();
+                List<IngredientEntity> ingredientsForDrink = pageParserHelper.parseDrinkPage(drinkDoc);
+                System.out.println("drink: " + drink.getKey());
+                if (ingredientsForDrink != null) {
+                    System.out.println("number of ingredients: " + ingredientsForDrink.size());
 
-                drinkIngredientsMapping.put(drink.getKey(), ingredientsForDrink);
-                for (IngredientEntity ingredient : ingredientsForDrink) {
-                    ingredients.add(ingredient.getName());
+                    drinkIngredientsMapping.put(drink.getKey(), ingredientsForDrink);
+                    for (IngredientEntity ingredient : ingredientsForDrink) {
+                        ingredients.add(ingredient.getName());
+                    }
+                    validDrinksCounter++;
+                } else {
+                    System.out.println("could not find ingredients for drink: " + invalidDrinksCounter++);
                 }
-                validDrinksCounter++;
-            } else {
-                System.out.println("could not find ingredients for drink: " + invalidDrinksCounter++);
+            } catch (SocketTimeoutException e) {
+                System.out.println("Connection timed out!");
             }
         }
         System.out.println("number of ingredients: " + ingredients.size());
