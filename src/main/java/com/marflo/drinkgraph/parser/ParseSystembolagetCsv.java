@@ -18,7 +18,7 @@ public class ParseSystembolagetCsv {
 
     static final String XML_LOCATION = "target/classes/csv/systembolaget-produkter.xml";
     static final DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");
-
+    static int counter = 0;
     public static void main(String[] args) throws Exception {
         Long startTime = new Date().getTime();
         List<ArticleEntity> articles = new ArrayList<>();
@@ -30,7 +30,7 @@ public class ParseSystembolagetCsv {
 
         Element doc = dom.getDocumentElement();
         NodeList nl = doc.getChildNodes();
-        for (int i = 0; i < 100 /*nl.getLength()*/; i++) {
+        for (int i = 0; i < nl.getLength(); i++) {
             if (nl.item(i).getNodeType() == Node.ELEMENT_NODE) {
                 Element el = (Element) nl.item(i);
                 if (el.getNodeName().contains("artikel")) {
@@ -84,7 +84,7 @@ public class ParseSystembolagetCsv {
 
         //Loop over all articles
         for (ArticleEntity article : articles) {
-            session.run("CREATE (a:Article {id: {articleId}, name:{name}, " +
+            session.run("MERGE (a:Article {id: {articleId}, name:{name}, " +
                             "name2:{name2}, price:{price}, volume: {volumeInMl}, " +
                             "salesStart: {salesStart}, alcoholPercentage: {alcoholPercentage} })",
                     Values.parameters("articleId", article.getArticleId(),
@@ -118,30 +118,70 @@ public class ParseSystembolagetCsv {
                                 "articleTypeName", article.getArticleType()));
             }
 
+            if (article.getCountry() != null && !article.getCountry().isEmpty()) {
+                session.run("MERGE (b:Country {name: {name} })",
+                        Values.parameters("name", article.getCountry() ));
+
+                session.run("MATCH (a:Article) WHERE a.id = {articleId} " +
+                                "MATCH (b:Country) WHERE b.name = {countryName} " +
+                                "MERGE (a)-[:FROM_COUNTRY]->(b)",
+                        Values.parameters("articleId", article.getArticleId(),
+                                "countryName", article.getCountry()));
+            }
+
+            if (article.getYear() != null) {
+                session.run("MERGE (b:Year {name: {name} })",
+                        Values.parameters("name", article.getYear() ));
+
+                session.run("MATCH (a:Article) WHERE a.id = {articleId} " +
+                                "MATCH (b:Year) WHERE b.name = {yearName} " +
+                                "MERGE (a)-[:FROM_YEAR]->(b)",
+                        Values.parameters("articleId", article.getArticleId(),
+                                "yearName", article.getYear()));
+            }
+
+            if (article.getPackaging() != null && !article.getPackaging().isEmpty()) {
+                session.run("MERGE (b:Package {name: {name} })",
+                        Values.parameters("name", article.getPackaging() ));
+
+                session.run("MATCH (a:Article) WHERE a.id = {articleId} " +
+                                "MATCH (b:Package) WHERE b.name = {packageName} " +
+                                "MERGE (a)-[:PACKAGING]->(b)",
+                        Values.parameters("articleId", article.getArticleId(),
+                                "packageName", article.getPackaging()));
+            }
+
+            if (article.getProducer() != null && !article.getProducer().isEmpty()) {
+                session.run("MERGE (b:Producer {name: {name} })",
+                        Values.parameters("name", article.getProducer() ));
+
+                session.run("MATCH (a:Article) WHERE a.id = {articleId} " +
+                                "MATCH (b:Producer) WHERE b.name = {producerName} " +
+                                "MERGE (a)-[:FROM_PRODUCER]->(b)",
+                        Values.parameters("articleId", article.getArticleId(),
+                                "producerName", article.getProducer()));
+            }
+
+            if (article.getSupplier() != null && !article.getSupplier().isEmpty()) {
+                session.run("MERGE (b:Supplier {name: {name} })",
+                        Values.parameters("name", article.getSupplier() ));
+
+                session.run("MATCH (a:Article) WHERE a.id = {articleId} " +
+                                "MATCH (b:Supplier) WHERE b.name = {supplierName} " +
+                                "MERGE (a)-[:FROM_SUPPLIER]->(b)",
+                        Values.parameters("articleId", article.getArticleId(),
+                                "supplierName", article.getSupplier()));
+            }
+
+            counter++;
+            if (counter % 1000 == 0)
+                System.out.println("count: " + counter);
         }
 
-        //Create ingredients nodes
-        /*for (String ingredient : ingredients) {
-            session.run("MERGE (a:Ingredient {name: {ingredientName}})",
-                    Values.parameters("ingredientName", ingredient));
-        }*/
-
-        //Create mappings
-        /*for (Map.Entry<String, List<IngredientEntity>> drinkIngredientConnection : drinkIngredientsMapping.entrySet()) {
-            for (IngredientEntity ingredient: drinkIngredientConnection.getValue()) {
-
-                session.run("MATCH (d:Drink) WHERE d.name = {drinkName} " +
-                                "MATCH (i:Ingredient) WHERE i.name = {ingredientName} " +
-                                "MERGE (d)-[:CONTAINS]->(i)",
-                        Values.parameters("drinkName", drinkIngredientConnection.getKey(),
-                                "ingredientName", ingredient.getName()));
-            }
-        }*/
 
         //close neo4j session
         System.out.println("done!");
         session.close();
         driver.close();
     }
-
 }
