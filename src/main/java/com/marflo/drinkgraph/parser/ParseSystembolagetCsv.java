@@ -3,6 +3,7 @@ package com.marflo.drinkgraph.parser;
 import javax.xml.parsers.*;
 
 import com.marflo.drinkgraph.data.ArticleEntity;
+import com.marflo.drinkgraph.data.PriceClasses;
 import org.joda.money.Money;
 import org.neo4j.driver.v1.*;
 import org.w3c.dom.*;
@@ -15,6 +16,7 @@ public class ParseSystembolagetCsv {
 
     static final String XML_LOCATION = "target/classes/csv/systembolaget-produkter.xml";
     static int counter = 0;
+    static List<PriceClasses> priceClasses;
 
     public static void main(String[] args) throws Exception {
         Long startTime = new Date().getTime();
@@ -27,7 +29,7 @@ public class ParseSystembolagetCsv {
 
         Element doc = dom.getDocumentElement();
         NodeList nl = doc.getChildNodes();
-        for (int i = 0; i < 100 /*nl.getLength()*/; i++) {
+        for (int i = 0; i < nl.getLength(); i++) {
             if (nl.item(i).getNodeType() == Node.ELEMENT_NODE) {
                 Element el = (Element) nl.item(i);
                 if (el.getNodeName().contains("artikel")) {
@@ -48,13 +50,14 @@ public class ParseSystembolagetCsv {
         article.setName(getElementByName(el, "Namn"));
         article.setName2(getElementByName(el, "Namn2"));
         article.setPrice(Money.parse("SEK " + getElementByName(el, "Prisinklmoms")));
-        article.setVolumeInMl(Integer.valueOf(getElementByName(el, "Volymiml")));
+        article.setVolumeInMl(Double.parseDouble(getElementByName(el, "Volymiml")));
         article.setSalesStart(getElementByName(el, "Saljstart"));
-        article.setAlcoholPercentage(Integer.valueOf(getElementByName(el, "Alkoholhalt").replace("%", ""))*100);
+        article.setAlcoholPercentage(Double.parseDouble(getElementByName(el, "Alkoholhalt").replace("%", "")));
 
         article.setAssortment(getElementByName(el, "Sortiment"));
         article.setArticleType(getElementByName(el, "Varugrupp"));
         article.setCountry(getElementByName(el, "Ursprunglandnamn"));
+        article.setArea(getElementByName(el, "Ursprung"));
         try {
             article.setYear(Integer.valueOf(getElementByName(el, "Argang")));
         } catch (NumberFormatException e) {
@@ -79,6 +82,7 @@ public class ParseSystembolagetCsv {
         Driver driver = GraphDatabase.driver("bolt://localhost", AuthTokens.basic("neo4j", "test123"));
         Session session = driver.session();
         System.out.println("start!");
+        constructPriceClasses(session);
         //Loop over all articles
         for (ArticleEntity article : articles) {
             session.run("MERGE (a:Article {id: {articleId}, name:{name}, " +
@@ -126,6 +130,25 @@ public class ParseSystembolagetCsv {
                                 "countryName", article.getCountry()));
             }
 
+            if (article.getArea() != null && !article.getArea().isEmpty()) {
+                session.run("MERGE (b:Area {name: {name} })",
+                        Values.parameters("name", article.getArea()));
+
+                session.run("MATCH (a:Article) WHERE a.id = {articleId} " +
+                                "MATCH (b:Area) WHERE b.name = {areaName} " +
+                                "MERGE (a)-[:FROM_AREA]->(b)",
+                        Values.parameters("articleId", article.getArticleId(),
+                                "areaName", article.getArea()));
+
+                if (article.getCountry() != null && !article.getCountry().isEmpty()) {
+                    session.run("MATCH (a:Country) WHERE a.name = {countryName} " +
+                                    "MATCH (b:Area) WHERE b.name = {areaName} " +
+                                    "MERGE (b)-[:PART_OF]->(a)",
+                            Values.parameters("countryName", article.getCountry(),
+                                    "areaName", article.getArea()));
+                }
+            }
+
             if (article.getYear() != null) {
                 session.run("MERGE (b:Year {name: {name} })",
                         Values.parameters("name", article.getYear() ));
@@ -170,6 +193,8 @@ public class ParseSystembolagetCsv {
                                 "supplierName", article.getSupplier()));
             }
 
+            mapToPriceClass(article, session);
+
             counter++;
             if (counter % 1000 == 0)
                 System.out.println("count: " + counter);
@@ -180,5 +205,36 @@ public class ParseSystembolagetCsv {
         System.out.println("done!");
         session.close();
         driver.close();
+    }
+
+    private static void mapToPriceClass(ArticleEntity article, Session session) {
+        Integer amountInMinor = article.getPrice().getAmountMinorInt();
+        for (PriceClasses priceClass : priceClasses) {
+            if (priceClass.getMinPrice() <= amountInMinor &&
+                    priceClass.getMaxPrice() > amountInMinor)
+                session.run("MATCH (a:Article) WHERE a.id = {articleId} " +
+                                "MATCH (b:PriceClass) WHERE b.name = {priceClassName} " +
+                                "MERGE (a)-[:IN_PRICE_RANGE]->(b)",
+                        Values.parameters("articleId", article.getArticleId(),
+                                "priceClassName", priceClass.getName()));
+        }
+    }
+
+    private static void constructPriceClasses(Session session) {
+        priceClasses = new ArrayList<>();
+        priceClasses.add(new PriceClasses("0-20 SEK", 0, 2000));
+        priceClasses.add(new PriceClasses("20-100 SEK", 2000, 10000));
+        priceClasses.add(new PriceClasses("100-200 SEK", 10000, 20000));
+        priceClasses.add(new PriceClasses("200-300 SEK", 20000, 30000));
+        priceClasses.add(new PriceClasses("300-600 SEK", 30000, 60000));
+        priceClasses.add(new PriceClasses("600+ SEK", 60000, Integer.MAX_VALUE));
+
+        for (PriceClasses priceClass : priceClasses) {
+            session.run("MERGE (a:PriceClass {name: {name}, minPrice:{minPrice}, maxPrice: {maxPrice} })",
+                    Values.parameters("name", priceClass.getName(),
+                            "minPrice", priceClass.getMinPrice(),
+                            "maxPrice", priceClass.getMaxPrice()
+                            ));
+        }
     }
 }

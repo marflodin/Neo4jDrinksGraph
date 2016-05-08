@@ -8,13 +8,14 @@ public class ArticleEntity {
     private String name;
     private String name2;
     private Money price;
-    private Integer volumeInMl;
+    private Double volumeInMl;
     private String salesStart;
-    private Integer alcoholPercentage;
+    private Double alcoholPercentage;
 
     private String assortment;
     private String articleType;
     private String country;
+    private String area;
     private Integer year;
     private String packaging;
     private String producer;
@@ -52,11 +53,11 @@ public class ArticleEntity {
         this.price = price;
     }
 
-    public Integer getVolumeInMl() {
+    public Double getVolumeInMl() {
         return volumeInMl;
     }
 
-    public void setVolumeInMl(Integer volumeInMl) {
+    public void setVolumeInMl(Double volumeInMl) {
         this.volumeInMl = volumeInMl;
     }
 
@@ -68,11 +69,11 @@ public class ArticleEntity {
         this.salesStart = salesStart;
     }
 
-    public Integer getAlcoholPercentage() {
+    public Double getAlcoholPercentage() {
         return alcoholPercentage;
     }
 
-    public void setAlcoholPercentage(Integer alcoholPercentage) {
+    public void setAlcoholPercentage(Double alcoholPercentage) {
         this.alcoholPercentage = alcoholPercentage;
     }
 
@@ -98,6 +99,14 @@ public class ArticleEntity {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
     }
 
     public Integer getYear() {
