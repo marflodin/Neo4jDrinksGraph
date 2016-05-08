@@ -2,18 +2,15 @@ package com.marflo.drinkgraph.data;
 
 import org.joda.money.Money;
 
-import java.math.BigDecimal;
-import java.util.Date;
-
 public class ArticleEntity {
 
     private Long articleId;
     private String name;
     private String name2;
     private Money price;
-    private BigDecimal volumeInMl;
-    private Date salesStart;
-    private BigDecimal alcoholPercentage;
+    private Integer volumeInMl;
+    private String salesStart;
+    private Integer alcoholPercentage;
 
     private String assortment;
     private String articleType;
@@ -55,27 +52,27 @@ public class ArticleEntity {
         this.price = price;
     }
 
-    public BigDecimal getVolumeInMl() {
+    public Integer getVolumeInMl() {
         return volumeInMl;
     }
 
-    public void setVolumeInMl(BigDecimal volumeInMl) {
+    public void setVolumeInMl(Integer volumeInMl) {
         this.volumeInMl = volumeInMl;
     }
 
-    public Date getSalesStart() {
+    public String getSalesStart() {
         return salesStart;
     }
 
-    public void setSalesStart(Date salesStart) {
+    public void setSalesStart(String salesStart) {
         this.salesStart = salesStart;
     }
 
-    public BigDecimal getAlcoholPercentage() {
+    public Integer getAlcoholPercentage() {
         return alcoholPercentage;
     }
 
-    public void setAlcoholPercentage(BigDecimal alcoholPercentage) {
+    public void setAlcoholPercentage(Integer alcoholPercentage) {
         this.alcoholPercentage = alcoholPercentage;
     }
 

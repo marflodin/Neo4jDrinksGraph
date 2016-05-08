@@ -4,12 +4,9 @@ import javax.xml.parsers.*;
 
 import com.marflo.drinkgraph.data.ArticleEntity;
 import org.joda.money.Money;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 import org.neo4j.driver.v1.*;
 import org.w3c.dom.*;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -17,8 +14,8 @@ import java.util.List;
 public class ParseSystembolagetCsv {
 
     static final String XML_LOCATION = "target/classes/csv/systembolaget-produkter.xml";
-    static final DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd");
     static int counter = 0;
+
     public static void main(String[] args) throws Exception {
         Long startTime = new Date().getTime();
         List<ArticleEntity> articles = new ArrayList<>();
@@ -30,7 +27,7 @@ public class ParseSystembolagetCsv {
 
         Element doc = dom.getDocumentElement();
         NodeList nl = doc.getChildNodes();
-        for (int i = 0; i < nl.getLength(); i++) {
+        for (int i = 0; i < 100 /*nl.getLength()*/; i++) {
             if (nl.item(i).getNodeType() == Node.ELEMENT_NODE) {
                 Element el = (Element) nl.item(i);
                 if (el.getNodeName().contains("artikel")) {
@@ -51,9 +48,9 @@ public class ParseSystembolagetCsv {
         article.setName(getElementByName(el, "Namn"));
         article.setName2(getElementByName(el, "Namn2"));
         article.setPrice(Money.parse("SEK " + getElementByName(el, "Prisinklmoms")));
-        article.setVolumeInMl(new BigDecimal(getElementByName(el, "Volymiml")));
-        article.setSalesStart(formatter.parseDateTime(getElementByName(el, "Saljstart")).toDate());
-        article.setAlcoholPercentage(new BigDecimal(getElementByName(el, "Alkoholhalt").replace("%", "")));
+        article.setVolumeInMl(Integer.valueOf(getElementByName(el, "Volymiml")));
+        article.setSalesStart(getElementByName(el, "Saljstart"));
+        article.setAlcoholPercentage(Integer.valueOf(getElementByName(el, "Alkoholhalt").replace("%", ""))*100);
 
         article.setAssortment(getElementByName(el, "Sortiment"));
         article.setArticleType(getElementByName(el, "Varugrupp"));
@@ -81,7 +78,7 @@ public class ParseSystembolagetCsv {
         //start neo4j session
         Driver driver = GraphDatabase.driver("bolt://localhost", AuthTokens.basic("neo4j", "test123"));
         Session session = driver.session();
-
+        System.out.println("start!");
         //Loop over all articles
         for (ArticleEntity article : articles) {
             session.run("MERGE (a:Article {id: {articleId}, name:{name}, " +
@@ -90,10 +87,10 @@ public class ParseSystembolagetCsv {
                     Values.parameters("articleId", article.getArticleId(),
                             "name", article.getName(),
                             "name2", article.getName2(),
-                            "price", article.getPrice().toString(),
-                            "volumeInMl", article.getVolumeInMl().toString(),
-                            "salesStart", article.getSalesStart().toString(),
-                            "alcoholPercentage", article.getAlcoholPercentage().toString()
+                            "price", article.getPrice().getAmountMinorInt(),
+                            "volumeInMl", article.getVolumeInMl(),
+                            "salesStart", article.getSalesStart(),
+                            "alcoholPercentage", article.getAlcoholPercentage()
                     ));
 
             if (article.getAssortment() != null && !article.getAssortment().isEmpty()) {
