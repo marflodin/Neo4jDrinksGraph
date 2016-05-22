@@ -40,7 +40,7 @@ public class ParseSystembolagetCsv {
         System.out.println("num: " + articles.size());
         createNeo4jNodes(articles);
         Long endTime = new Date().getTime();
-        System.out.println("done in[ms]: " + (endTime - startTime));
+        System.out.println("done in[ms]: " + (endTime - startTime) + " articles handled per second: " + (counter*1000)/(endTime - startTime));
     }
 
     private static ArticleEntity parseArtikel(Element el) {
